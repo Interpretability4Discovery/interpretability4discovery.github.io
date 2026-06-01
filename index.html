@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interpretability for Discovery (Interp4Discovery) | NeurIPS 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --paper: #ffffff;
+      --ink: #1f2a37;
+      --muted: #4b5563;
+      --navy: #1e3a5f;
+      --blue: #2b4c7e;
+      --teal: #3c5f91;
+      --line: #dbe3ee;
+      --shadow: 0 12px 36px rgba(31, 42, 55, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Merriweather", Georgia, serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 0;
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      background-image:
+        linear-gradient(120deg, rgba(20, 16, 12, 0.62), rgba(30, 21, 11, 0.42)),
+        radial-gradient(circle at 78% 24%, rgba(255, 216, 168, 0.28), transparent 42%),
+        url("./hero-bg.png");
+      background-size: cover;
+      background-position: center 38%;
+      background-repeat: no-repeat;
+      color: #f5fbff;
+      border-radius: 0;
+      box-shadow: none;
+      padding: clamp(42px, 7vw, 88px) 0 clamp(34px, 6vw, 68px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.26), transparent 70%);
+      top: -220px;
+      right: -120px;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 4px;
+      padding: 7px 12px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.2vw, 3.35rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+    }
+
+    .hero-sub {
+      color: rgba(240, 248, 255, 0.92);
+      font-size: clamp(1rem, 1.8vw, 1.16rem);
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .meta-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      color: #eef7ff;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 4px;
+      padding: 11px 18px;
+      font-weight: 600;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: var(--navy);
+      box-shadow: 0 6px 16px rgba(30, 58, 95, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue);
+    }
+
+    .btn-secondary {
+      color: #ebf5ff;
+      border: 1px solid rgba(235, 245, 255, 0.45);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    section {
+      padding: 22px 0 10px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .about {
+      padding: 0;
+      color: #2b3a4e;
+    }
+
+    .topic-list {
+      margin-top: 14px;
+      padding-left: 20px;
+      color: #2b3a4e;
+    }
+
+    .topic-list li {
+      margin: 8px 0;
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .question-card {
+      padding: 6px 0;
+      color: #2b3a4e;
+      font-weight: 520;
+    }
+
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .date-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 16px 18px;
+      background: var(--paper);
+    }
+
+    .date-label {
+      color: var(--muted);
+      font-family: "Inter", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.02em;
+    }
+
+    .date-value {
+      font-weight: 700;
+      font-size: 1.12rem;
+      margin-top: 5px;
+      color: var(--navy);
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      padding-bottom: 24px;
+    }
+
+    .speaker-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(43, 34, 24, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(43, 34, 24, 0.13);
+    }
+
+    .speaker-photo {
+      display: block;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      background: #dce4ee;
+    }
+
+    .speaker-info {
+      padding: 14px 14px 16px;
+    }
+
+    .speaker-info h3 {
+      font-size: 1.06rem;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .speaker-info h3 a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .speaker-info h3 a:hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    .speaker-affiliation {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .schedule {
+      margin-top: 8px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .schedule-row {
+      display: flex;
+      gap: 16px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+
+    .schedule-row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-row:nth-child(even) {
+      background: #f7faff;
+    }
+
+    .schedule-time {
+      flex: 0 0 120px;
+      color: var(--muted);
+      font-family: "Inter", sans-serif;
+      font-size: 0.9rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .schedule-session {
+      color: #2b3a4e;
+      font-weight: 600;
+    }
+
+    .schedule-row.is-break .schedule-session {
+      font-weight: 400;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .schedule-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 26px;
+      padding: 26px 0 38px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        margin-bottom: 18px;
+      }
+
+      .hero-card {
+        padding-top: 48px;
+      }
+
+      .speaker-photo {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-card">
+      <div class="hero-inner">
+        <span class="badge">NeurIPS 2026 Workshop</span>
+        <h1>Interpretability for Discovery</h1>
+        <p class="hero-sub">
+          What do AI models know that we don't? This workshop turns interpretability into a tool
+          for discovery&mdash;surfacing the novel scientific knowledge encoded inside models,
+          across modalities and domains.
+        </p>
+
+        <div class="hero-meta">
+          <span class="meta-chip">From Explanation to Discovery</span>
+          <span class="meta-chip">Across Modalities &amp; Domains</span>
+          <span class="meta-chip">Invited Talks, Panel &amp; Posters</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#speakers">View Speakers</a>
+          <a class="btn btn-secondary" href="#dates">Key Dates</a>
+          <a class="btn btn-secondary" href="#schedule">Schedule</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="overview">
+      <div class="section-head">
+        <h2>Overview</h2>
+      </div>
+      <div class="about">
+        <p>
+          AI models now match or exceed human experts across scientific modalities&mdash;from
+          protein structure prediction and clinical forecasting to astronomy, climate science,
+          animal communication, and strategic games. To reach that performance, they appear to have
+          learned patterns and regularities that humans have not yet articulated. Interpretability
+          gives us a way to read those representations back out.
+        </p>
+        <p style="margin-top: 12px;">
+          This workshop reframes interpretability as a tool for <strong>discovery</strong>, not just
+          explanation. We bring together researchers from interpretability and the sciences to adapt
+          methods to new modalities and architectures, identify the open problems where
+          interpretability can reveal genuinely new insights, and turn what models encode into
+          knowledge that domain experts can test and validate.
+        </p>
+      </div>
+    </section>
+
+    <section id="questions">
+      <div class="section-head">
+        <h2>Key Questions</h2>
+      </div>
+      <div class="about">
+        <ul class="topic-list">
+          <li>How can existing interpretability methods adapt to architectures, biases, and data modalities that differ from standard models?</li>
+          <li>What open scientific questions can interpretability help answer that are currently unknown to humans?</li>
+          <li>How can we translate interpretable internal representations into actionable, testable new knowledge?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="topics">
+      <div class="section-head">
+        <h2>Topics</h2>
+      </div>
+      <div class="about">
+        <ul class="topic-list">
+          <li><strong>Methods and models for knowledge discovery:</strong> interpretability methods, evaluation frameworks, and model designs that support discovery.</li>
+          <li><strong>Perspectives on interpretability for novel knowledge:</strong> position papers and theory on scope, limitations, and open problems.</li>
+          <li><strong>Interpretability-driven discovery:</strong> empirical case studies where interpretability surfaces non-obvious knowledge across domains.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="dates">
+      <div class="section-head">
+        <h2>Key Dates</h2>
+        <p class="section-note">All deadlines are AoE</p>
+      </div>
+      <div class="dates-grid">
+        <div class="date-card">
+          <div class="date-label">Submission Deadline</div>
+          <div class="date-value">August 29, 2026</div>
+        </div>
+        <div class="date-card">
+          <div class="date-label">Author Notification</div>
+          <div class="date-value">September 29, 2026</div>
+        </div>
+        <div class="date-card">
+          <div class="date-label">Workshop</div>
+          <div class="date-value">December 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="speakers">
+      <div class="section-head">
+        <h2>Invited Speakers</h2>
+      </div>
+
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <img class="speaker-photo" src="gasper.png" alt="Gašper Beguš" />
+          <div class="speaker-info">
+            <h3><a href="https://www.gasperbegus.com/home">Gašper Beguš</a></h3>
+            <p class="speaker-affiliation">Associate Professor of Linguistics<br />UC Berkeley</p>
+          </div>
+        </article>
+
+        <article class="speaker-card">
+          <img class="speaker-photo" src="https://beenkim.github.io/images/Been_Kim.png" alt="Been Kim" />
+          <div class="speaker-info">
+            <h3><a href="https://beenkim.github.io/">Been Kim</a></h3>
+            <p class="speaker-affiliation">Senior Staff Research Scientist<br />Google DeepMind</p>
+          </div>
+        </article>
+
+        <article class="speaker-card">
+          <img class="speaker-photo" src="ArielPic.avif" alt="Ariel Goldstein" />
+          <div class="speaker-info">
+            <h3><a href="https://www.chia.cam.ac.uk/team/ariel-goldstein">Ariel Goldstein</a></h3>
+            <p class="speaker-affiliation">Assistant Professor of Cognitive Science and AI<br />University of Cambridge (CHIA)</p>
+          </div>
+        </article>
+
+        <!--
+        <article class="speaker-card">
+          <img class="speaker-photo" src="suinlee.jpg" alt="Su-In Lee" />
+          <div class="speaker-info">
+            <h3><a href="https://aims.cs.washington.edu/su-in-lee">Su-In Lee</a></h3>
+            <p class="speaker-affiliation">Boeing Endowed Professor of Computer Science<br />University of Washington</p>
+          </div>
+        </article>
+
+        <article class="speaker-card">
+          <img class="speaker-photo" src="https://cbp.riken.jp/wp-content/uploads/2019/03/yasuhiro_matsunaga.jpg" alt="Yasuhiro Matsunaga" />
+          <div class="speaker-info">
+            <h3><a href="https://cbp.riken.jp/en/member/profile/yasuhiro_matsunaga/">Yasuhiro Matsunaga</a></h3>
+            <p class="speaker-affiliation">Research Scientist<br />RIKEN Center for Computational Science</p>
+          </div>
+        </article>
+        -->
+
+        <article class="speaker-card">
+          <img class="speaker-photo" src="nick.jpeg" alt="Nicholas Wang" />
+          <div class="speaker-info">
+            <h3><a href="https://www.linkedin.com/in/nkwang24/">Nicholas Wang</a></h3>
+            <p class="speaker-affiliation">Lead Research Scientist<br />Goodfire</p>
+          </div>
+        </article>
+
+        <!--
+        <article class="speaker-card">
+          <img class="speaker-photo" src="https://stanford.edu/~yamins/uploads/2/4/9/2/24920889/988298.jpg?426" alt="Daniel Yamins" />
+          <div class="speaker-info">
+            <h3><a href="https://stanford.edu/~yamins/index.html">Daniel Yamins</a></h3>
+            <p class="speaker-affiliation">Associate Professor of Psychology and Computer Science<br />Stanford University</p>
+          </div>
+        </article>
+        -->
+      </div>
+    </section>
+
+    <section id="schedule">
+      <div class="section-head">
+        <h2>Tentative Schedule</h2>
+        <p class="section-note">A full-day, in-person program</p>
+      </div>
+      <div class="schedule">
+        <div class="schedule-row"><span class="schedule-time">08:30 &ndash; 08:40</span><span class="schedule-session">Welcome &amp; Opening Remarks</span></div>
+        <div class="schedule-row"><span class="schedule-time">08:40 &ndash; 09:10</span><span class="schedule-session">Invited Talk 1</span></div>
+        <div class="schedule-row"><span class="schedule-time">09:10 &ndash; 09:40</span><span class="schedule-session">Invited Talk 2</span></div>
+        <div class="schedule-row is-break"><span class="schedule-time">09:40 &ndash; 10:00</span><span class="schedule-session">Coffee Break</span></div>
+        <div class="schedule-row"><span class="schedule-time">10:00 &ndash; 10:30</span><span class="schedule-session">Spotlight Talks</span></div>
+        <div class="schedule-row"><span class="schedule-time">10:30 &ndash; 11:30</span><span class="schedule-session">Panel Discussion</span></div>
+        <div class="schedule-row"><span class="schedule-time">11:30 &ndash; 12:00</span><span class="schedule-session">Invited Talk 3</span></div>
+        <div class="schedule-row is-break"><span class="schedule-time">12:00 &ndash; 13:00</span><span class="schedule-session">Lunch</span></div>
+        <div class="schedule-row"><span class="schedule-time">13:00 &ndash; 14:30</span><span class="schedule-session">Poster Session</span></div>
+        <div class="schedule-row"><span class="schedule-time">14:30 &ndash; 15:00</span><span class="schedule-session">Invited Talk 4</span></div>
+        <div class="schedule-row is-break"><span class="schedule-time">15:00 &ndash; 15:30</span><span class="schedule-session">Coffee Break</span></div>
+        <div class="schedule-row"><span class="schedule-time">15:30 &ndash; 16:00</span><span class="schedule-session">Invited Talk 5</span></div>
+        <div class="schedule-row"><span class="schedule-time">16:00 &ndash; 16:30</span><span class="schedule-session">Invited Talk 6</span></div>
+        <div class="schedule-row"><span class="schedule-time">16:30 &ndash; 17:00</span><span class="schedule-session">Closing Remarks</span></div>
+      </div>
+      <p class="schedule-note">
+        Schedule is tentative. Talk titles will be posted here before the conference so attendees
+        can plan which sessions to join. All talks will be livestreamed for remote attendees.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Interpretability for Discovery (Interp4Discovery) — NeurIPS 2026
+  </footer>
+</body>
+</html>
