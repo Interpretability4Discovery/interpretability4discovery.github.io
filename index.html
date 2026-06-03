@@ -237,7 +237,7 @@
 
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       padding-bottom: 24px;
     }
@@ -346,6 +346,12 @@
       font-size: 0.92rem;
     }
 
+    @media (max-width: 900px) {
+      .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 720px) {
       .hero {
         margin-bottom: 18px;
@@ -357,6 +363,12 @@
 
       .speaker-photo {
         height: 220px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .speakers-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -473,6 +485,14 @@
         </article>
 
         <article class="speaker-card">
+          <img class="speaker-photo" src="ArielPic.avif" alt="Ariel Goldstein" />
+          <div class="speaker-info">
+            <h3><a href="https://www.chia.cam.ac.uk/team/ariel-goldstein">Ariel Goldstein</a></h3>
+            <p class="speaker-affiliation">Assistant Professor of Cognitive Science and AI<br />University of Cambridge (CHIA)</p>
+          </div>
+        </article>
+
+        <article class="speaker-card">
           <img class="speaker-photo" src="https://beenkim.github.io/images/Been_Kim.png" alt="Been Kim" />
           <div class="speaker-info">
             <h3><a href="https://beenkim.github.io/">Been Kim</a></h3>
@@ -481,10 +501,10 @@
         </article>
 
         <article class="speaker-card">
-          <img class="speaker-photo" src="ArielPic.avif" alt="Ariel Goldstein" />
+          <img class="speaker-photo" src="DianboLiu.jpeg" alt="Dianbo Liu" />
           <div class="speaker-info">
-            <h3><a href="https://www.chia.cam.ac.uk/team/ariel-goldstein">Ariel Goldstein</a></h3>
-            <p class="speaker-affiliation">Assistant Professor of Cognitive Science and AI<br />University of Cambridge (CHIA)</p>
+            <h3><a href="https://www.asintelligence.xyz/">Dianbo Liu</a></h3>
+            <p class="speaker-affiliation">Assistant Professor<br />National University of Singapore</p>
           </div>
         </article>
 
@@ -511,6 +531,14 @@
           <div class="speaker-info">
             <h3><a href="https://www.linkedin.com/in/nkwang24/">Nicholas Wang</a></h3>
             <p class="speaker-affiliation">Lead Research Scientist<br />Goodfire</p>
+          </div>
+        </article>
+
+        <article class="speaker-card">
+          <img class="speaker-photo" src="john.jpg" alt="John F. Wu" />
+          <div class="speaker-info">
+            <h3><a href="https://jwuphysics.github.io/">John F. Wu</a></h3>
+            <p class="speaker-affiliation">Associate Astronomer, STScI<br />Johns Hopkins University</p>
           </div>
         </article>
 
