@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "inverse-primary": "#0a4c6e",
+                            "tertiary": "#c8a0f0",
+                            "on-secondary-fixed": "#0d1f2b",
+                            "error": "#ff6b6b",
+                            "secondary": "#88b4cc",
+                            "on-primary-fixed": "#001f2e",
+                            "surface-tint": "#7dd3fc",
+                            "surface-container": "#141c2e",
+                            "tertiary-container": "#3d2060",
+                            "surface-variant": "#1a2438",
+                            "error-container": "#3d1414",
+                            "on-surface": "#e0e8f0",
+                            "secondary-container": "#1a3a4e",
+                            "inverse-surface": "#e0e8f0",
+                            "surface-container-high": "#1a2438",
+                            "on-tertiary-container": "#e8d0ff",
+                            "on-tertiary-fixed": "#1a002e",
+                            "surface-bright": "#1a2438",
+                            "on-primary-fixed-variant": "#004d73",
+                            "outline": "#4a6070",
+                            "secondary-fixed-dim": "#88b4cc",
+                            "surface-container-highest": "#202c42",
+                            "on-tertiary": "#1a002e",
+                            "on-secondary-container": "#c0d8e8",
+                            "on-background": "#e0e8f0",
+                            "tertiary-fixed-dim": "#c8a0f0",
+                            "primary-fixed-dim": "#7dd3fc",
+                            "primary": "#7dd3fc",
+                            "background": "#0a0e1a",
+                            "primary-container": "#0e4d6e",
+                            "tertiary-fixed": "#e8d0ff",
+                            "surface-dim": "#0f1524",
+                            "on-surface-variant": "#a0b4c4",
+                            "surface": "#0f1524",
+                            "on-primary-container": "#c8eaff",
+                            "on-secondary-fixed-variant": "#2a4a5e",
+                            "primary-fixed": "#c8eaff",
+                            "on-tertiary-fixed-variant": "#4d2a73",
+                            "on-secondary": "#001f2e",
+                            "on-error": "#1a0000",
+                            "inverse-on-surface": "#0a0e1a",
+                            "on-primary": "#001f2e",
+                            "surface-container-low": "#111828",
+                            "secondary-fixed": "#c0d8e8",
+                            "on-error-container": "#ffb3b3",
+                            "outline-variant": "#2a3a48",
+                            "surface-container-lowest": "#0a0e1a",
+                            "discovery-teal": "#7dd3fc",
+                            "vibrant-violet": "#c8a0f0",
+                            "muted-silver": "#a0b4c4",
+                            "ink-slate": "#e0e8f0",
+                            "deep-space": "#0a0e1a"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.5rem",
+                            "lg": "1rem",
+                            "xl": "1.5rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "section-gap-lg": "80px",
+                            "stack-lg": "24px",
+                            "stack-sm": "8px",
+                            "container-max": "1200px",
+                            "gutter": "24px",
+                            "section-gap-sm": "40px",
+                            "stack-xs": "4px",
+                            "stack-md": "16px"
+                        },
+                        "fontFamily": {
+                            "headline": ["Inter"],
+                            "display": ["Inter"],
+                            "body": ["Inter"],
+                            "label": ["Inter"],
+                            "headline-xl-mobile": ["Hanken Grotesk", "sans-serif"],
+                            "label-caps": ["JetBrains Mono", "monospace"],
+                            "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                            "headline-md": ["Hanken Grotesk", "sans-serif"],
+                            "meta-sm": ["Inter", "sans-serif"],
+                            "body-lg": ["Inter", "sans-serif"],
+                            "body-md": ["Inter", "sans-serif"],
+                            "headline-xl": ["Hanken Grotesk", "sans-serif"]
+                        },
+                        "fontSize": {
+                            "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                            "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                            "meta-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .glacier-glass {
+            background: rgba(15, 21, 36, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(125, 211, 252, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+        .glacier-glow {
+            box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
+        }
+        .glass-nav {
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+        }
+        .schedule-row:hover {
+            background: rgba(125, 211, 252, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased bg-deep-space text-on-surface">
+<!-- Global Background Image -->
+<div class="fixed inset-0 z-[-1] overflow-hidden">
+<img alt="Nebula Background" class="w-full h-full object-cover scale-105 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUv3CBQ7_pIjK2zivuvdZb5LurZUicyAbXHQ7oMAuTsb91e0mAMejX-n51AScT3IrwuNDEMCN6Wzjk21zJAQwCeY7Y8LnniJLJcEFfvWUaDH3vrGDeMyDRRAyP7b8fsrBSf-x47WNduxwZ47oSkWnyCjH1W4K6TuiotS3FgLroWKbAx5N088vsfWsOa0gZDe69tAQYDlX4-_kYK7wLW_iyoJ3G4n-L16GpUpRATzra4m7VZbbAl8Fdn4lzPigRek53kuX67A8QAVE"/>
+<div class="absolute inset-0 bg-gradient-to-b from-deep-space/60 via-deep-space/40 to-deep-space/80"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+<a class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-2" href="#">
+<span class="w-8 h-8 bg-discovery-teal rounded-lg flex items-center justify-center text-deep-space"><span class="material-symbols-outlined text-[20px]">ac_unit</span></span>
+            Interp4Discovery
+        </a>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-discovery-teal transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-discovery-teal transition-colors" href="#">CFP</a>
+<a class="font-label-caps text-label-caps text-discovery-teal border-b-2 border-discovery-teal pb-1" href="#">Schedule</a>
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-discovery-teal transition-colors" href="#">Speakers</a>
+<button class="bg-discovery-teal text-deep-space font-label-caps text-label-caps px-6 py-2 rounded-lg font-bold hover:opacity-90 transition-all active:scale-95 glacier-glow">Submit Paper</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Header Section -->
+<header class="pt-40 pb-section-gap-sm relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<span class="font-label-caps text-label-caps text-discovery-teal mb-stack-sm block tracking-[0.2em]">NeurIPS 2026 Workshop</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-3xl leading-tight">Program Schedule</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-stack-md max-w-2xl">
+            A tentative full-day immersive program exploring the intersections of interpretability and scientific discovery. All times are in local conference time.
+        </p>
+</div>
+</header>
+<!-- Schedule Main Canvas -->
+<main class="max-w-container-max mx-auto px-gutter py-section-gap-lg">
+<!-- Day Overview Chip -->
+<div class="flex flex-wrap items-center gap-stack-md mb-section-gap-sm">
+<div class="glacier-glass bg-discovery-teal/10 text-discovery-teal px-5 py-2.5 flex items-center gap-3 rounded-xl">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-label-caps text-label-caps">Friday, Dec 11, 2026</span>
+</div>
+<div class="glacier-glass px-5 py-2.5 flex items-center gap-3 rounded-xl text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-label-caps text-label-caps">Main Hall B, Vancouver CC</span>
+</div>
+</div>
+<!-- Schedule Container -->
+<div class="flex flex-col glacier-glass rounded-2xl overflow-hidden">
+<!-- Table Header -->
+<div class="grid grid-cols-12 py-5 border-b border-white/10 items-center bg-white/5 hidden md:grid">
+<div class="col-span-2 px-gutter">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70">Time</span>
+</div>
+<div class="col-span-8 px-gutter">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70">Session Details</span>
+</div>
+<div class="col-span-2 px-gutter text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70">Format</span>
+</div>
+</div>
+<!-- Schedule Items -->
+<!-- 08:30 -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">08:30</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Welcome &amp; Opening Remarks</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">General introduction to the workshop goals and logistics.</p>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-white/5 text-muted-silver border border-white/10 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Plenary</span>
+</div>
+</div>
+<!-- 09:00 Invited Talk 1 -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">09:00</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter flex gap-stack-md">
+<div class="hidden sm:block shrink-0 w-12 h-12 bg-surface-variant overflow-hidden rounded-xl border border-white/10">
+<img alt="Speaker 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGUFABI_JgBzxZg5wov-GQfydYmxgahjE1G9jvvvQ3fwsOTD2XLjRfbdbFPll5HU9mhJOLGgJYRkURb45kCrMLmipwB982NEN5BfGMIERZXxNUIPOrxxLyP7T7RSxkjTnur2DJYka2_fQT_37cmLUaaUjw525LxffGpLDJ0C9px5FIMwzGy367UuM4dr_fpiqmFel3QrkxQKOVxvPgs9ohwqPU0JZM-CE_oAykWeOHP7SKYliahEa-RoI1R13lWk88braWz8ha3LA"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Invited Talk 1: TBD</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal font-semibold">TBD</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-discovery-teal/10 text-discovery-teal border border-discovery-teal/20 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Keynote</span>
+</div>
+</div>
+<!-- 09:30 Invited Talk 2 -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">09:30</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter flex gap-stack-md">
+<div class="hidden sm:block shrink-0 w-12 h-12 bg-surface-variant overflow-hidden rounded-xl border border-white/10">
+<img alt="Speaker 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4tAGA7rCO9CjmmFkBecxr68hu9YS9xB0u-HEafLTBKBz8eHm27k3RVXbKz_w1H58z3wEz659LkW_wfntvqR0oneL8G3mcGcKk9Le_XcT-ie_tt59W8aNuatAmHQ_1ZTWx7JMhk6uZFmevxU11QGjoxFqPfHH59KFZA285Y6mpn-CQsjQscb55XNQWA-R3zKmINpMaEtQgpSdLTQfOAijWqJP0EW_k7mlNhg-CNPn7PVIkxPpfzr2bl0-8a2staV39hp8N6Mi3opQ"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Invited Talk 2: TBD</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal font-semibold">TBD</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-discovery-teal/10 text-discovery-teal border border-discovery-teal/20 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Keynote</span>
+</div>
+</div>
+<!-- 10:00 Spotlight -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">10:00</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Spotlight Talks</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">Selected top-tier paper presentations (5 mins each).</p>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-vibrant-violet/10 text-vibrant-violet border border-vibrant-violet/20 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Spotlight</span>
+</div>
+</div>
+<!-- 10:30 Panel -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">10:30</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Panel Discussion: The Future of Interpretability</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">Discussing the bridge between black-box models and domain experts.</p>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-primary-container/30 text-discovery-teal border border-discovery-teal/20 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Interactive</span>
+</div>
+</div>
+<!-- 11:30 Coffee Break -->
+<div class="grid grid-cols-12 py-6 border-b border-white/5 items-center bg-white/[0.04]">
+<div class="col-span-12 md:col-span-2 px-gutter">
+<span class="font-label-caps text-body-md font-bold text-muted-silver/60 block">11:30</span>
+</div>
+<div class="col-span-12 md:col-span-10 px-gutter flex items-center gap-3">
+<span class="material-symbols-outlined text-discovery-teal/60">coffee</span>
+<span class="font-label-caps text-label-caps text-muted-silver/80 uppercase tracking-[0.2em]">Coffee Break</span>
+</div>
+</div>
+<!-- 12:00-->
+<div class="grid grid-cols-12 py-8 border-b border-white/5 items-center bg-white/[0.06]">
+<div class="col-span-12 md:col-span-2 px-gutter">
+<span class="font-label-caps text-body-md font-bold text-muted-silver/60 block">12:00</span>
+</div>
+<div class="col-span-12 md:col-span-10 px-gutter flex items-center gap-3">
+<span class="material-symbols-outlined text-discovery-teal/60">restaurant</span>
+<span class="font-label-caps text-label-caps text-muted-silver/80 uppercase tracking-[0.2em]">Networking Lunch</span>
+</div>
+</div>
+<!-- 13:00 Poster Session -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row bg-discovery-teal/[0.08]">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">13:00</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Poster Session &amp; Tea</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">Interactive session with all accepted workshop papers. Posters displayed in the Atrium.</p>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-discovery-teal text-deep-space px-4 py-1.5 font-label-caps text-[10px] rounded-full font-bold uppercase tracking-wider glacier-glow">Poster</span>
+</div>
+</div>
+<!-- 14:30 Invited Talk 3 & 4 -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">14:30</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter">
+<div class="mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Invited Talk 3: TBD</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal font-semibold">TBD</p>
+</div>
+<div class="border-t border-white/10 pt-stack-md">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Invited Talk 4: TBD</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal font-semibold">TBD</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-discovery-teal/10 text-discovery-teal border border-discovery-teal/20 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Keynote</span>
+</div>
+</div>
+<!-- 15:30 Coffee Break -->
+<div class="grid grid-cols-12 py-6 border-b border-white/5 items-center bg-white/[0.04]">
+<div class="col-span-12 md:col-span-2 px-gutter">
+<span class="font-label-caps text-body-md font-bold text-muted-silver/60 block">15:30</span>
+</div>
+<div class="col-span-12 md:col-span-10 px-gutter flex items-center gap-3">
+<span class="material-symbols-outlined text-discovery-teal/60">coffee</span>
+<span class="font-label-caps text-label-caps text-muted-silver/80 uppercase tracking-[0.2em]">Afternoon Tea</span>
+</div>
+</div>
+<!-- 16:00 Invited Talk 5 & 6 -->
+<div class="grid grid-cols-12 py-stack-lg border-b border-white/5 items-start schedule-row group transition-colors">
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0">
+<span class="font-label-caps text-headline-md font-bold text-discovery-teal block">16:00</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter">
+<div class="mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Invited Talk 5: TBD</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal font-semibold">TBD</p>
+</div>
+<div class="border-t border-white/10 pt-stack-md">
+<h3 class="font-headline-md text-headline-md text-ink-slate mb-1">Invited Talk 6: TBD</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal font-semibold">TBD</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0">
+<span class="inline-block bg-discovery-teal/10 text-discovery-teal border border-discovery-teal/20 px-3 py-1 font-label-caps text-[10px] rounded-full uppercase tracking-wider">Keynote</span>
+</div>
+</div>
+<!-- 17:00 Closing -->
+<div class="grid grid-cols-12 py-10 items-start bg-discovery-teal text-deep-space relative overflow-hidden">
+<div class="absolute inset-0 bg-white/20 mix-blend-overlay"></div>
+<div class="col-span-12 md:col-span-2 px-gutter mb-2 md:mb-0 relative z-10">
+<span class="font-label-caps text-headline-md font-bold block">17:00</span>
+</div>
+<div class="col-span-12 md:col-span-8 px-gutter relative z-10">
+<h3 class="font-headline-md text-headline-md mb-1">Closing Remarks &amp; Awards</h3>
+<p class="font-meta-sm text-meta-sm font-medium opacity-80">Best paper awards and final thoughts on the future of Interp4Discovery.</p>
+</div>
+<div class="col-span-12 md:col-span-2 px-gutter md:text-right mt-3 md:mt-0 relative z-10">
+<span class="inline-block bg-deep-space text-discovery-teal px-4 py-1.5 font-label-caps text-[10px] rounded-full font-bold uppercase tracking-widest shadow-lg">Finale</span>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-section-gap-lg flex flex-col md:flex-row items-center justify-between p-stack-lg glacier-glass rounded-2xl">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Can't attend in person?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Virtual attendance options are available through the NeurIPS portal.</p>
+</div>
+<button class="mt-stack-md md:mt-0 border-2 border-discovery-teal text-discovery-teal hover:bg-discovery-teal hover:text-deep-space px-10 py-3 rounded-xl font-label-caps text-label-caps font-bold transition-all glacier-glow">
+            Virtual Registration
+        </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest/80 backdrop-blur-md w-full mt-section-gap-lg border-t border-white/10">
+<div class="max-w-container-max mx-auto px-gutter py-12 flex flex-col md:flex-row justify-between items-center gap-stack-lg">
+<div class="flex flex-col items-center md:items-start gap-stack-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Interp4Discovery</span>
+<span class="font-body-md text-body-md text-on-surface-variant opacity-60">© NeurIPS 2026 Interpretability for Discovery</span>
+</div>
+<div class="flex flex-wrap justify-center gap-x-10 gap-y-4">
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-discovery-teal transition-all" href="#">NeurIPS 2026</a>
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-discovery-teal transition-all" href="#">OpenReview</a>
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-discovery-teal transition-all" href="#">Contact Us</a>
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-discovery-teal transition-all" href="#">Code of Conduct</a>
+</div>
+</div>
+</footer>
+</body></html>

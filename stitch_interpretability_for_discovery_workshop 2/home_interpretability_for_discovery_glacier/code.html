@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-tertiary": "#ffffff",
+                            "tertiary-container": "#1e293b",
+                            "surface-bright": "#1e293b",
+                            "on-secondary-fixed": "#0f172a",
+                            "secondary-container": "#0ea5e9",
+                            "inverse-surface": "#f8fafc",
+                            "secondary": "#7dd3fc",
+                            "secondary-fixed-dim": "#38bdf8",
+                            "on-background": "#f8fafc",
+                            "error": "#fb7185",
+                            "muted-silver": "#94a3b8",
+                            "surface-dim": "#0f172a",
+                            "on-surface": "#f8fafc",
+                            "surface-variant": "#1e293b",
+                            "secondary-fixed": "#7dd3fc",
+                            "vibrant-violet": "#c084fc",
+                            "primary": "#7dd3fc",
+                            "surface": "#101827",
+                            "tertiary": "#7dd3fc",
+                            "ink-slate": "#f8fafc",
+                            "on-primary-container": "#bae6fd",
+                            "surface-container-lowest": "#0f172a",
+                            "error-container": "#4c0519",
+                            "inverse-primary": "#0369a1",
+                            "on-tertiary-fixed-variant": "#bae6fd",
+                            "on-surface-variant": "#cbd5e1",
+                            "on-tertiary-container": "#7dd3fc",
+                            "on-primary-fixed": "#0f172a",
+                            "on-secondary-fixed-variant": "#0c4a6e",
+                            "outline": "#475569",
+                            "on-primary": "#082f49",
+                            "tertiary-fixed-dim": "#7dd3fc",
+                            "tertiary-fixed": "#bae6fd",
+                            "on-secondary-container": "#e0f2fe",
+                            "deep-space": "#101827",
+                            "surface-tint": "#7dd3fc",
+                            "on-primary-fixed-variant": "#075985",
+                            "discovery-teal": "#7dd3fc",
+                            "primary-container": "#0c4a6e",
+                            "on-secondary": "#082f49",
+                            "inverse-on-surface": "#0f172a",
+                            "on-tertiary-fixed": "#0f172a",
+                            "on-error": "#ffffff",
+                            "on-error-container": "#fda4af",
+                            "background": "#101827",
+                            "primary-fixed-dim": "#7dd3fc",
+                            "surface-container-high": "#1e293b",
+                            "outline-variant": "#334155",
+                            "surface-container-highest": "#334155",
+                            "surface-container-low": "#111827",
+                            "surface-container": "#1e293b",
+                            "primary-fixed": "#bae6fd"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.75rem",
+                            "lg": "0.75rem",
+                            "xl": "1rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "section-gap-lg": "80px",
+                            "stack-lg": "24px",
+                            "stack-sm": "8px",
+                            "container-max": "1200px",
+                            "gutter": "24px",
+                            "section-gap-sm": "40px",
+                            "stack-xs": "4px",
+                            "stack-md": "16px"
+                        },
+                        "fontFamily": {
+                            "headline-xl-mobile": ["Hanken Grotesk"],
+                            "label-caps": ["JetBrains Mono"],
+                            "headline-lg": ["Hanken Grotesk"],
+                            "headline-md": ["Hanken Grotesk"],
+                            "meta-sm": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "headline-xl": ["Hanken Grotesk"]
+                        },
+                        "fontSize": {
+                            "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                            "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                            "meta-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(16, 24, 39, 0.9) 0%, rgba(16, 24, 39, 0.6) 50%, rgba(16, 24, 39, 0.4) 100%);
+        }
+        .glass-panel {
+            background: rgba(16, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(125, 211, 252, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-discovery-teal selection:text-deep-space">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-deep-space/60 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+<div class="font-headline-md text-headline-md font-bold text-on-tertiary tracking-tight">
+            Interp4Discovery
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-discovery-teal border-b-2 border-discovery-teal pb-1" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-tertiary/70 hover:text-discovery-teal transition-colors" href="#">CFP</a>
+<a class="font-label-caps text-label-caps text-on-tertiary/70 hover:text-discovery-teal transition-colors" href="#">Schedule</a>
+<a class="font-label-caps text-label-caps text-on-tertiary/70 hover:text-discovery-teal transition-colors" href="#">Speakers</a>
+</div>
+<button class="bg-discovery-teal text-deep-space font-label-caps text-label-caps px-6 py-2.5 font-bold rounded-lg hover:brightness-110 active:scale-95 transition-all">
+            Submit Paper
+        </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[85vh] flex items-center pt-24 bg-deep-space overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUv3CBQ7_pIjK2zivuvdZb5LurZUicyAbXHQ7oMAuTsb91e0mAMejX-n51AScT3IrwuNDEMCN6Wzjk21zJAQwCeY7Y8LnniJLJcEFfvWUaDH3vrGDeMyDRRAyP7b8fsrBSf-x47WNduxwZ47oSkWnyCjH1W4K6TuiotS3FgLroWKbAx5N088vsfWsOa0gZDe69tAQYDlX4-_kYK7wLW_iyoJ3G4n-L16GpUpRATzra4m7VZbbAl8Fdn4lzPigRek53kuX67A8QAVE'); background-size: cover; background-position: center center;">
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative max-w-container-max mx-auto px-gutter w-full grid grid-cols-1 md:grid-cols-12 gap-stack-lg items-center">
+<div class="md:col-span-8">
+<div class="inline-block glass-panel px-4 py-1.5 mb-stack-md rounded-full">
+<span class="font-label-caps text-label-caps text-discovery-teal">NeurIPS 2026 Workshop</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-tertiary mb-stack-md max-w-2xl drop-shadow-lg">
+                Interpretability for <span class="text-discovery-teal">Discovery</span>
+</h1>
+<div class="glass-panel p-6 rounded-xl max-w-xl mb-10">
+<p class="font-body-lg text-body-lg text-on-tertiary/90 leading-relaxed">
+                    What do AI models know that we don't? This workshop aims to explore how model interpretability can support the discovery and understanding of novel knowledge in AI systems.
+                </p>
+</div>
+<div class="flex flex-col gap-2 mb-10">
+<div class="flex items-center gap-3 text-discovery-teal">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-headline-md text-[24px] font-bold">December 12, 2026</span>
+</div>
+<div class="flex items-center gap-3 text-on-tertiary">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-body-lg">Atlanta, Georgia, USA</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="flex items-center gap-2 bg-discovery-teal text-deep-space font-label-caps text-label-caps px-8 py-4 font-bold rounded-lg transition-all hover:shadow-[0_0_20px_rgba(125,211,252,0.4)] active:scale-95" href="#speakers">
+                    VIEW SPEAKERS
+                    <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<button class="flex items-center gap-2 glass-panel text-on-tertiary font-label-caps text-label-caps px-8 py-4 font-medium rounded-lg transition-all hover:bg-white/10 active:scale-95">
+                    SUBMIT PAPER
+                    <span class="material-symbols-outlined text-[18px]">launch</span>
+</button>
+</div>
+</div>
+<div class="hidden md:block md:col-span-4">
+<div class="glass-panel p-stack-lg border-l-4 border-l-discovery-teal rounded-xl">
+<h3 class="font-headline-md text-headline-md text-on-tertiary mb-stack-sm">Key Themes</h3>
+<ul class="space-y-4 text-on-tertiary/90 font-body-md">
+<li class="flex gap-3"><span class="text-discovery-teal">•</span> From Explanation to Discovery</li>
+<li class="flex gap-3"><span class="text-discovery-teal">•</span> Across Modalities &amp; Domains</li>
+<li class="flex gap-3"><span class="text-discovery-teal">•</span> Invited Talks, Panel &amp; Posters</li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+<!-- Overview Section -->
+<section class="py-section-gap-lg relative bg-surface-container-low overflow-hidden" style="background-image: linear-gradient(rgba(15, 21, 36, 0.95), rgba(15, 21, 36, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUv3CBQ7_pIjK2zivuvdZb5LurZUicyAbXHQ7oMAuTsb91e0mAMejX-n51AScT3IrwuNDEMCN6Wzjk21zJAQwCeY7Y8LnniJLJcEFfvWUaDH3vrGDeMyDRRAyP7b8fsrBSf-x47WNduxwZ47oSkWnyCjH1W4K6TuiotS3FgLroWKbAx5N088vsfWsOa0gZDe69tAQYDlX4-_kYK7wLW_iyoJ3G4n-L16GpUpRATzra4m7VZbbAl8Fdn4lzPigRek53kuX67A8QAVE'); background-size: cover; background-position: center; background-attachment: fixed;">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-stack-lg relative z-10">
+<div class="md:col-span-4">
+<h2 class="font-headline-lg text-headline-lg text-discovery-teal sticky top-32">
+                Research <br/><span class="text-on-surface/60">Frontier</span>
+</h2>
+</div>
+<div class="md:col-span-8">
+<div class="glass-panel p-8 rounded-2xl space-y-stack-md text-on-surface font-body-lg leading-loose">
+<p class="">
+                    AI models now match or exceed human experts across many domains, from protein structure prediction and clinical forecasting to astronomy, climate science, animal communication, and strategic games. To reach that performance, they appear to have learned patterns and regularities that humans have not yet articulated. Interpretability gives us a way to read those representations back out.
+                </p>
+<p class="">
+                    This workshop reframes interpretability as a tool for <strong class="text-discovery-teal font-semibold">discovery</strong>, not just explanation. We bring together researchers from interpretability and the sciences to adapt methods to new modalities and architectures, identify the open problems where interpretability can reveal new insights, and turn what models encode into knowledge that domain experts can test and validate.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Dates (Bento Style) -->
+<section class="py-section-gap-lg bg-background overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Key Dates</h2>
+<span class="font-label-caps text-label-caps text-muted-silver">All deadlines are AoE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Deadline Card -->
+<div class="glass-panel group p-stack-lg hover:border-discovery-teal transition-all duration-300 rounded-xl">
+<div class="mb-stack-lg flex justify-between items-start">
+<span class="material-symbols-outlined text-discovery-teal text-[32px]">event_note</span>
+<span class="font-label-caps text-label-caps text-error px-2 py-1 bg-error/10 border border-error/20 rounded">CLOSED</span>
+</div>
+<h4 class="font-label-caps text-label-caps text-muted-silver mb-2">SUBMISSION DEADLINE</h4>
+<p class="font-headline-md text-headline-md text-on-surface">August 29, 2026</p>
+</div>
+<!-- Notification Card -->
+<div class="glass-panel group p-stack-lg hover:border-vibrant-violet transition-all duration-300 rounded-xl">
+<div class="mb-stack-lg flex justify-between items-start">
+<span class="material-symbols-outlined text-vibrant-violet text-[32px]">campaign</span>
+<span class="font-label-caps text-label-caps text-vibrant-violet px-2 py-1 bg-vibrant-violet/10 border border-vibrant-violet/20 rounded">UPCOMING</span>
+</div>
+<h4 class="font-label-caps text-label-caps text-muted-silver mb-2">AUTHOR NOTIFICATION</h4>
+<p class="font-headline-md text-headline-md text-on-surface">September 29, 2026</p>
+</div>
+<!-- Workshop Card -->
+<div class="group p-stack-lg bg-primary-container text-on-tertiary transition-all duration-300 rounded-xl border border-discovery-teal/20 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUv3CBQ7_pIjK2zivuvdZb5LurZUicyAbXHQ7oMAuTsb91e0mAMejX-n51AScT3IrwuNDEMCN6Wzjk21zJAQwCeY7Y8LnniJLJcEFfvWUaDH3vrGDeMyDRRAyP7b8fsrBSf-x47WNduxwZ47oSkWnyCjH1W4K6TuiotS3FgLroWKbAx5N088vsfWsOa0gZDe69tAQYDlX4-_kYK7wLW_iyoJ3G4n-L16GpUpRATzra4m7VZbbAl8Fdn4lzPigRek53kuX67A8QAVE'); background-size: cover;"></div>
+<div class="relative z-10">
+<div class="mb-stack-lg flex justify-between items-start">
+<span class="material-symbols-outlined text-discovery-teal text-[32px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<h4 class="font-label-caps text-label-caps text-on-tertiary/50 mb-2">WORKSHOP EVENT</h4>
+<p class="font-headline-md text-headline-md text-discovery-teal">December 2026</p>
+<p class="font-meta-sm text-meta-sm text-on-tertiary/60 mt-2">Vancouver, Canada</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Invited Speakers -->
+<section class="py-section-gap-lg bg-surface-container-low" id="speakers">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="max-w-2xl mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Invited Speakers</h2>
+<p class="font-body-md text-on-surface-variant">Leading voices at the intersection of AI interpretability and scientific discovery from premier global institutions.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+<!-- Speaker 1 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden border border-white/5 mb-stack-md rounded-xl">
+<img alt="Portrait of Gašper Beguš" class="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsQytDBVmS96sQPDF8ddks9iAiG6nCFnUGZb2EeLVwCitZSVm0YhjPND8E_j4czlzYpZyc8d6MLkOPmW6A0pERoSg0jFodc4X9GxwQ_nGpkVgXrBSGLvog8iPDDeClsxTYvLi8IxeErsGEZ_W-DcINAwnCdYztQRPlEDE5wX9yaxfpCsuS6iVymxFsg_2F-syTZ_HdjL9UGrSd0AYWZyJ0LjlnNLiF-EVxzyoP7KZrmjOWN4NTb5ooMoh4"/>
+<div class="absolute inset-0 bg-discovery-teal/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Gašper Beguš</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal uppercase tracking-wider mt-1">UC Berkeley</p>
+</div>
+<!-- Speaker 2 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden border border-white/5 mb-stack-md rounded-xl">
+<img alt="Portrait of Ariel Goldstein" class="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuxsRyrn-XdNycsBEKpd2GW4SIm2D9Br-10rb3TltpNLA0A-GfFT5NkOQA7W1pUEIbiBMcBdUZmLLZE_vXYHyC7Z_SUgOslXp1Zp5TTG8VpBKISHpqL9W8pVyaxf0NywWKIHNptdoAqj1_dwj_mA7GW65gZdUfv_n6pMu5v_AQLSLmNk_xIpy1C52LkS1Ip_Y7LVAU_3pdCKyVbmQc3wYkA3Um47hZQezSsd4_1tZTSrwKBaruMZRrqeA"/>
+<div class="absolute inset-0 bg-discovery-teal/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ariel Goldstein</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal uppercase tracking-wider mt-1">University of Cambridge</p>
+</div>
+<!-- Speaker 3 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden border border-white/5 mb-stack-md rounded-xl">
+<img alt="Portrait of Been Kim" class="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsUiZ1CAmMXdDxI2wZIsKqY7mCeS650qsX-nMMLlc-RkTTepBE_zYOuB-btv56O92AV8W7Sc9W5cPYLdCVbOL96cEkndznJ9uIvR5J8ICEWgKqXwIlWNctpgcY8YHmwlc3F__-cuvgc9SFSuBjplK2V1h-UQl5pPW6K_gDtd7dGXl_2Mot28ZP-s_3jy-C_By7sdAeGT0wmFg_mcHys2WGv6rH9xYgO8lMh4nOu86oXz4a0sgyHF6laFy4" style="object-position: 35% center;"/>
+<div class="absolute inset-0 bg-discovery-teal/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Been Kim</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal uppercase tracking-wider mt-1">Google DeepMind</p>
+</div>
+<!-- Speaker 4 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden border border-white/5 mb-stack-md rounded-xl">
+<img alt="Portrait of Dianbo Liu" class="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvxIRlb94bPLx9JJUOYUqbnPsNdvhZCJ19knS8wR9CrAcAifSxvQdqmwE9Bn2XRyKio4M2CYbiic-7mAHcPr6aQAkGGEo8lFTYBGwsAX08xYMvngv-Y3JsuFsQXE4iyB5yhbZ0e2pEadMnert1en81edVP9KhbHzTusE4nKsbVsuY1D0MGaLmZ9bq8asyYC9DOTGL8lAhEeAfJTZV6c3GMXnvoN2gBbSnPWX-37XoDp-FNqihl1EQ8MGD0"/>
+<div class="absolute inset-0 bg-discovery-teal/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Dianbo Liu</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal uppercase tracking-wider mt-1">National University of Singapore</p>
+</div>
+<!-- Speaker 5 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden border border-white/5 mb-stack-md rounded-xl">
+<img alt="Portrait of Nicholas Wang" class="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuZ6zoirRzPMOgzvtZVpfl1Qq12mYUOC7BASkahRPGfnm6av27V5IzidKRV7je01FeN0h4bvLPJWq9dmhCdqE3-unf5l35aVCwK4sXAYjaHnyE05myQdxxE9DAuKoeUbrTBYaSRaC38ewah-0GxAFJs7IcASgq-ZpMMI_c7_9YdcDeWlZmgH0CTlFFAMaMbp60suFDGmX5j1mUlXK1vl6lIIvbG3g2Du0bY8nUa-ibubbdUPquN7m3HMIQ"/>
+<div class="absolute inset-0 bg-discovery-teal/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Nicholas Wang</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal uppercase tracking-wider mt-1">Goodfire</p>
+</div>
+<!-- Speaker 6 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden border border-white/5 mb-stack-md rounded-xl">
+<img alt="Portrait of John F. Wu" class="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLum6dLA8TVyAO9ftRZUn5xenNfeLRw7LXrxQry9IBc5FYNkB0FsfOwNr0BNt_qy0STSVJOM0PNqU6SayhR-eFiaMO_8sZI1uUmbA5A6DFkNq8kiZ26Yd9U7tIoOV3EG_qM4T2SdEl3lrbfudEEkL7lC9bGZ881ZcmOzFZ4gQTrIwTQMVwJnFec01VIqAtWafgacUIVOQOZWBRmcTGRfSTzO4XD-pSjb8IFjgUl5_4b-TRqgrNcxzXmvXHc"/>
+<div class="absolute inset-0 bg-discovery-teal/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">John F. Wu</h3>
+<p class="font-meta-sm text-meta-sm text-discovery-teal uppercase tracking-wider mt-1">Johns Hopkins University</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Schedule Section -->
+<section class="py-section-gap-lg bg-background">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-headline-lg text-headline-lg mb-12 text-on-surface">Workshop Schedule</h2>
+<div class="border-t border-white/10">
+<!-- 08:30 - 08:40 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">08:30 – 08:40</div>
+<div class="flex-grow">
+<div class="font-headline-md text-[18px] text-on-surface">Welcome &amp; Opening Remarks</div>
+<div class="text-meta-sm text-muted-silver mt-1">Organizing Committee</div>
+</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">INTRO</div>
+</div>
+<!-- 08:40 - 09:30 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">08:40 – 09:30</div>
+<div class="flex-grow">
+<div class="font-headline-md text-[18px] text-discovery-teal">Invited Talk 1: Mechanistic Interpretability in Biology</div>
+<div class="text-meta-sm text-muted-silver mt-1">Dr. Sarah Jenkins — MIT CSAIL</div>
+</div>
+<div class="font-label-caps text-label-caps px-3 py-1 bg-discovery-teal/10 text-discovery-teal border border-discovery-teal/20 rounded">TALK</div>
+</div>
+<!-- 09:30 - 10:00 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">09:30 – 10:00</div>
+<div class="flex-grow">
+<div class="font-headline-md text-[18px] text-on-surface">Spotlight Talks: Session I</div>
+<div class="text-meta-sm text-muted-silver mt-1">Selected Paper Presentations</div>
+</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">SPOTLIGHT</div>
+</div>
+<!-- 10:00 - 10:30 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">10:00 – 10:30</div>
+<div class="flex-grow font-headline-md text-[18px] text-on-surface">Coffee Break</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">BREAK</div>
+</div>
+<!-- 10:30 - 11:20 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">10:30 – 11:20</div>
+<div class="flex-grow">
+<div class="font-headline-md text-[18px] text-discovery-teal">Invited Talk 2: Discovering Physical Laws from Latent Spaces</div>
+<div class="text-meta-sm text-muted-silver mt-1">Prof. David Chen — Stanford University</div>
+</div>
+<div class="font-label-caps text-label-caps px-3 py-1 bg-discovery-teal/10 text-discovery-teal border border-discovery-teal/20 rounded">TALK</div>
+</div>
+<!-- 11:20 - 12:30 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">11:20 – 12:30</div>
+<div class="flex-grow">
+<div class="font-headline-md text-[18px] text-on-surface">Panel Discussion: The Future of AI-Led Discovery</div>
+<div class="text-meta-sm text-muted-silver mt-1">Moderated by Been Kim</div>
+</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">PANEL</div>
+</div>
+<!-- 12:30 - 14:00 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">12:30 – 14:00</div>
+<div class="flex-grow font-headline-md text-[18px] text-on-surface">Networking Lunch</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">BREAK</div>
+</div>
+<!-- 14:00 - 15:30 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">14:00 – 15:30</div>
+<div class="flex-grow font-headline-md text-[18px] text-vibrant-violet">Poster Session &amp; Afternoon Tea</div>
+<div class="font-label-caps text-label-caps px-3 py-1 bg-vibrant-violet/10 text-vibrant-violet border border-vibrant-violet/20 rounded">POSTERS</div>
+</div>
+<!-- 15:30 - 16:45 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">15:30 – 16:45</div>
+<div class="flex-grow">
+<div class="font-headline-md text-[18px] text-on-surface">Spotlight Talks: Session II</div>
+<div class="text-meta-sm text-muted-silver mt-1">Selected Paper Presentations</div>
+</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">SPOTLIGHT</div>
+</div>
+<!-- 16:45 - 17:00 -->
+<div class="group flex items-center py-6 border-b border-white/5 hover:bg-white/5 transition-colors">
+<div class="w-32 flex-shrink-0 font-label-caps text-label-caps text-muted-silver">16:45 – 17:00</div>
+<div class="flex-grow font-headline-md text-[18px] text-on-surface">Closing Remarks &amp; Awards</div>
+<div class="font-label-caps text-label-caps px-3 py-1 glass-panel text-muted-silver rounded">FINALE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full mt-section-gap-lg border-t border-white/10">
+<div class="max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="font-headline-md text-headline-md text-on-tertiary font-bold tracking-tight">
+            Interp4Discovery
+        </div>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-discovery-teal transition-all" href="#">NeurIPS 2026</a>
+</div>
+</div>
+</footer>
+</body></html>

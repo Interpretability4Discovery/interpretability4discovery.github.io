@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Call for Papers | Interp4Discovery - NeurIPS 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#7dd3fc", // Ice-blue from Glacier
+                    "on-primary": "#0f172a",
+                    "deep-space": "#101827", // Requested dark background
+                    "surface-glass": "rgba(30, 41, 59, 0.4)",
+                    "border-glass": "rgba(255, 255, 255, 0.1)",
+                    "muted-silver": "#94a3b8",
+                    "on-surface": "#f1f5f9",
+                    "on-surface-variant": "#cbd5e1",
+                    "discovery-teal": "#7dd3fc", // Aligning with primary accent
+                    "vibrant-violet": "#c084fc",
+                    "background": "#020617",
+                    "ink-slate": "#f8fafc",
+                    "primary-container": "#0c4a6e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.75rem", // ROUND_TWELVE from Glacier
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap-lg": "80px",
+                    "stack-lg": "24px",
+                    "stack-sm": "8px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "section-gap-sm": "40px",
+                    "stack-xs": "4px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Inter", "Hanken Grotesk"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Inter", "Hanken Grotesk"],
+                    "headline-md": ["Inter", "Hanken Grotesk"],
+                    "meta-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter", "Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "meta-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-mesh {
+            background: radial-gradient(circle at 50% 0%, rgba(125, 211, 252, 0.25) 0%, transparent 70%),
+                        radial-gradient(circle at 100% 100%, rgba(192, 132, 252, 0.15) 0%, transparent 70%);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        body {
+            background-color: #020617;
+            background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVSfxF-mGHLS7-NvmsrDdR4Ds35Br0fHQ-weo_Teb5bG8VkgJBgWIfLAcxjttPehdhKfLvtvB9B_b4JvtfxZFve-nf6maUN57gr5uPkLYqkQGzU_bhClrUYUCzi-LzOnLmZLtzxp7lyRHypBASLWULrIyyxLBvpcH2VqUbLbPED3LaieWTWy03av3bVNVfYP8XRAv5j5dzxDX6_xIYwkbmS-rlb7szi9KtlO1lig_Dc-6Yp5QtLGS6Q7FwyMhLct07FY_DfFlxdPE');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/30 antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-panel border-x-0 border-t-0 bg-opacity-80">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">
+            Interp4Discovery
+        </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">CFP</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Schedule</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Speakers</a>
+</div>
+<a class="bg-primary text-deep-space font-label-caps text-label-caps px-6 py-2.5 font-bold rounded-full hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/20" href="https://openreview.net/group/edit?id=NeurIPS.cc/2026/Workshop/Interp4Discovery#workflowInvitations" target="_blank">
+            Submit Paper
+        </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-48 pb-32 overflow-hidden hero-mesh">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03] pointer-events-none"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter">
+<div class="max-w-3xl">
+<span class="inline-block bg-primary/10 border border-primary/30 text-primary font-label-caps text-label-caps px-4 py-1.5 rounded-full mb-8 backdrop-blur-sm">NeurIPS 2026 Workshop</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-8 tracking-tight drop-shadow-2xl">Call for Papers</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                We invite submissions on the role of interpretability in enabling scientific discovery. Join us in Sydney to explore how transparent ML models can bridge the gap between data-driven insights and mechanistic understanding.
+            </p>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<main class="max-w-container-max mx-auto px-gutter -mt-16 relative z-20 pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- Key Dates Column -->
+<div class="lg:col-span-4 space-y-stack-md">
+<div class="glass-panel p-8 shadow-2xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+                    Key Dates
+                </h2>
+<div class="space-y-stack-lg">
+<div class="border-l-4 border-primary/50 pl-6 py-2 bg-primary/5">
+<p class="font-label-caps text-label-caps text-muted-silver uppercase mb-1">Submission Deadline</p>
+<p class="font-headline-md text-headline-md text-on-surface">Aug 29, 2026</p>
+<p class="font-meta-sm text-meta-sm text-muted-silver mt-1">23:59 AoE</p>
+</div>
+<div class="border-l-4 border-vibrant-violet/50 pl-6 py-2 bg-vibrant-violet/5">
+<p class="font-label-caps text-label-caps text-muted-silver uppercase mb-1">Notification</p>
+<p class="font-headline-md text-headline-md text-on-surface">Sept 29, 2026</p>
+</div>
+<div class="border-l-4 border-muted-silver/30 pl-6 py-2">
+<p class="font-label-caps text-label-caps text-muted-silver uppercase mb-1">Workshop Dates</p>
+<p class="font-headline-md text-headline-md text-on-surface">Dec 11-12, 2026</p>
+<p class="font-meta-sm text-meta-sm text-muted-silver mt-1">Sydney, Australia</p>
+</div>
+</div>
+<div class="mt-10">
+<a class="w-full flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 text-on-surface font-label-caps text-label-caps py-4 font-bold rounded-xl transition-all backdrop-blur-md" href="https://openreview.net/group/edit?id=NeurIPS.cc/2026/Workshop/Interp4Discovery#workflowInvitations" target="_blank">
+                        OpenReview Portal
+                        <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="glass-panel p-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-muted-silver">download</span>
+                    Templates
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Submissions must follow the NeurIPS 2026 formatting guidelines.
+                </p>
+<div class="space-y-3">
+<a class="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-primary/40 transition-all group" href="#">
+<span class="font-meta-sm text-meta-sm font-bold text-on-surface group-hover:text-primary">LaTeX Template (ZIP)</span>
+<span class="material-symbols-outlined text-muted-silver group-hover:text-primary">description</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-primary/40 transition-all group" href="#">
+<span class="font-meta-sm text-meta-sm font-bold text-on-surface group-hover:text-primary">Style Guidelines (PDF)</span>
+<span class="material-symbols-outlined text-muted-silver group-hover:text-primary">picture_as_pdf</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Content Area Column -->
+<div class="lg:col-span-8 space-y-stack-lg">
+<div class="glass-panel p-10 shadow-2xl">
+<section class="mb-section-gap-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 pb-4 border-b border-white/10">Submission Guidelines</h2>
+<div class="grid md:grid-cols-2 gap-stack-lg mb-10">
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl">
+<h3 class="font-label-caps text-label-caps text-primary mb-4 uppercase tracking-widest">Full Papers</h3>
+<p class="font-headline-md text-headline-md mb-2 text-on-surface">9 Pages</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Excluding references and appendices. Best for mature work and significant contributions.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl">
+<h3 class="font-label-caps text-label-caps text-vibrant-violet mb-4 uppercase tracking-widest">Short Papers</h3>
+<p class="font-headline-md text-headline-md mb-2 text-on-surface">4 Pages</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Work-in-progress, position papers, or preliminary results in discovery science.</p>
+</div>
+</div>
+<div class="prose prose-invert max-w-none">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Formatting &amp; LaTeX</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            All submissions must be formatted using the Interp4Discovery modified NeurIPS LaTeX style. 
+                            Submissions are limited to the page counts specified above. There is no limit on appendices or references, 
+                            but reviewers are not required to read them.
+                        </p>
+<ul class="space-y-4 list-none p-0">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Use the provided 2026 style file with the <code class="bg-white/10 text-primary px-1.5 rounded">workshop</code> option enabled.</p>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Ensure all figures are legible and use colorblind-friendly palettes.</p>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Upload all files as a single PDF via the OpenReview portal.</p>
+</li>
+</ul>
+</div>
+</section>
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 pb-4 border-b border-white/10">Policies</h2>
+<div class="space-y-stack-lg">
+<div class="p-8 bg-white/5 border border-white/5 rounded-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">visibility_off</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Double-blind Review</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                Submissions must be anonymized. Do not include author names, affiliations, or identifying information in the initial PDF. Cite your own previous work in the third person.
+                            </p>
+</div>
+<div class="p-8 bg-white/5 border border-white/5 rounded-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Non-Archival</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                The workshop is non-archival. Accepted papers will be posted on the workshop website, but this does not preclude future submission to journals or conferences. We welcome work recently accepted or under review elsewhere.
+                            </p>
+</div>
+<div class="p-8 bg-white/5 border border-white/5 rounded-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Responsible Use Statement</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                Authors must include a brief statement in the appendix regarding the responsible use of interpretability tools, ensuring that mechanistic insights are not misinterpreted as causal certainties without appropriate validation.
+                            </p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Visual Divider -->
+<div class="max-w-container-max mx-auto px-gutter my-section-gap-lg">
+<div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+</div>
+<!-- Call to Action -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap-lg">
+<div class="relative glass-panel p-16 text-center overflow-hidden border-primary/20 shadow-2xl rounded-2xl">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-vibrant-violet/5 pointer-events-none"></div>
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">Ready to Contribute?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                Submit your work to the leading venue for interpretability in scientific discovery.
+            </p>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="bg-primary text-deep-space font-label-caps text-label-caps px-12 py-4 font-bold rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary/25" href="https://openreview.net/group/edit?id=NeurIPS.cc/2026/Workshop/Interp4Discovery#workflowInvitations" target="_blank">
+                    Start Submission
+                </a>
+<a class="bg-white/5 border border-white/20 text-on-surface font-label-caps text-label-caps px-12 py-4 font-bold rounded-full hover:bg-white/10 transition-all backdrop-blur-md" href="#">
+                    Contact Organizers
+                </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-deep-space/90 backdrop-blur-md border-t border-white/5 py-16">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-md text-headline-md text-on-surface font-bold mb-3 tracking-tight">
+                Interp4Discovery
+            </div>
+<p class="font-body-md text-body-md text-muted-silver">
+                © NeurIPS 2026 Interpretability for Discovery
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-primary transition-all" href="#">NeurIPS 2026</a>
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-primary transition-all" href="#">OpenReview</a>
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-primary transition-all" href="#">Contact Us</a>
+<a class="font-label-caps text-label-caps text-muted-silver hover:text-primary transition-all" href="#">Code of Conduct</a>
+</div>
+</div>
+</footer>
+<script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Simple Fade-in Observer
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('main > div, section').forEach(el => {
+        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8', 'ease-out');
+        observer.observe(el);
+    });
+</script>
+</body></html>

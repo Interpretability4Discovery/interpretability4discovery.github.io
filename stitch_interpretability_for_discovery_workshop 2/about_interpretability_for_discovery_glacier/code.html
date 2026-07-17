@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-tertiary": "#ffffff",
+                            "tertiary-container": "#0f172a",
+                            "surface-bright": "#1e293b",
+                            "on-secondary-fixed": "#e0f2fe",
+                            "secondary-container": "#0369a1",
+                            "inverse-surface": "#f8fafc",
+                            "secondary": "#7dd3fc",
+                            "secondary-fixed-dim": "#38bdf8",
+                            "on-background": "#f8fafc",
+                            "error": "#ef4444",
+                            "muted-silver": "#94a3b8",
+                            "surface-dim": "#0f172a",
+                            "on-surface": "#f1f5f9",
+                            "surface-variant": "#334155",
+                            "secondary-fixed": "#bae6fd",
+                            "vibrant-violet": "#A78BFA",
+                            "primary": "#7dd3fc",
+                            "surface": "#101827",
+                            "tertiary": "#ffffff",
+                            "ink-slate": "#f1f5f9",
+                            "on-primary-container": "#e0f2fe",
+                            "surface-container-lowest": "#020617",
+                            "error-container": "#7f1d1d",
+                            "inverse-primary": "#0369a1",
+                            "on-tertiary-fixed-variant": "#7dd3fc",
+                            "on-surface-variant": "#cbd5e1",
+                            "on-tertiary-container": "#7dd3fc",
+                            "on-primary-fixed": "#082f49",
+                            "on-secondary-fixed-variant": "#0c4a6e",
+                            "outline": "#475569",
+                            "on-primary": "#082f49",
+                            "tertiary-fixed-dim": "#7dd3fc",
+                            "tertiary-fixed": "#bae6fd",
+                            "on-secondary-container": "#e0f2fe",
+                            "deep-space": "#101827",
+                            "surface-tint": "#7dd3fc",
+                            "on-primary-fixed-variant": "#075985",
+                            "discovery-teal": "#7dd3fc",
+                            "primary-container": "#082f49",
+                            "on-secondary": "#082f49",
+                            "inverse-on-surface": "#0f172a",
+                            "on-tertiary-fixed": "#082f49",
+                            "on-error": "#ffffff",
+                            "on-error-container": "#fecaca",
+                            "background": "#101827",
+                            "primary-fixed-dim": "#38bdf8",
+                            "surface-container-high": "#1e293b",
+                            "outline-variant": "#334155",
+                            "surface-container-highest": "#334155",
+                            "surface-container-low": "#0f172a",
+                            "surface-container": "#1e293b",
+                            "primary-fixed": "#bae6fd"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.75rem",
+                            "lg": "1rem",
+                            "xl": "1.5rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "section-gap-lg": "80px",
+                            "stack-lg": "24px",
+                            "stack-sm": "8px",
+                            "container-max": "1200px",
+                            "gutter": "24px",
+                            "section-gap-sm": "40px",
+                            "stack-xs": "4px",
+                            "stack-md": "16px"
+                        },
+                        "fontFamily": {
+                            "headline-xl-mobile": ["Inter", "sans-serif"],
+                            "label-caps": ["JetBrains Mono", "monospace"],
+                            "headline-lg": ["Inter", "sans-serif"],
+                            "headline-md": ["Inter", "sans-serif"],
+                            "meta-sm": ["Inter", "sans-serif"],
+                            "body-lg": ["Inter", "sans-serif"],
+                            "body-md": ["Inter", "sans-serif"],
+                            "headline-xl": ["Inter", "sans-serif"]
+                        },
+                        "fontSize": {
+                            "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                            "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                            "meta-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-discovery-teal/30 selection:text-discovery-teal">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-deep-space/60 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+<div class="font-headline-md text-headline-md font-bold text-on-tertiary flex items-center gap-2">
+<span class="w-2 h-8 bg-discovery-teal rounded-full"></span>
+            Interp4Discovery
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-tertiary/60 hover:text-discovery-teal transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-tertiary/60 hover:text-discovery-teal transition-colors" href="#">CFP</a>
+<a class="font-label-caps text-label-caps text-on-tertiary/60 hover:text-discovery-teal transition-colors" href="#">Schedule</a>
+<a class="font-label-caps text-label-caps text-on-tertiary/60 hover:text-discovery-teal transition-colors" href="#">Speakers</a>
+<button class="bg-discovery-teal text-deep-space px-6 py-2.5 rounded-full font-label-caps text-label-caps font-bold hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-discovery-teal/20">
+                Submit Paper
+            </button>
+</div>
+<button class="md:hidden text-on-tertiary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24 bg-fixed bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVSfxF-mGHLS7-NvmsrDdR4Ds35Br0fHQ-weo_Teb5bG8VkgJBgWIfLAcxjttPehdhKfLvtvB9B_b4JvtfxZFve-nf6maUN57gr5uPkLYqkQGzU_bhClrUYUCzi-LzOnLmZLtzxp7lyRHypBASLWULrIyyxLBvpcH2VqUbLbPED3LaieWTWy03av3bVNVfYP8XRAv5j5dzxDX6_xIYwkbmS-rlb7szi9KtlO1lig_Dc-6Yp5QtLGS6Q7FwyMhLct07FY_DfFlxdPE');">
+<!-- Hero Context Section -->
+<section class="relative py-24 overflow-hidden min-h-[614px] flex items-center">
+<!-- Overlay to ensure readability on the complex background -->
+<div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+<div class="relative max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 items-center gap-stack-lg">
+<div class="md:col-span-7 glass-panel p-10 rounded-2xl">
+<span class="font-label-caps text-label-caps text-discovery-teal mb-stack-sm block tracking-widest">WORKSHOP FOCUS</span>
+<h1 class="font-headline-xl text-headline-xl text-on-tertiary mb-stack-md leading-tight">
+                    From Prediction to <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-discovery-teal to-blue-300">Profound Discovery</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    Interpretability is no longer just a debugging tool. It is the bridge between black-box models and scientific breakthroughs in astronomy, biology, and climate science.
+                </p>
+<div class="mt-10 flex gap-4">
+<button class="bg-discovery-teal/20 border border-discovery-teal/30 text-discovery-teal px-8 py-3 rounded-xl font-label-caps hover:bg-discovery-teal/30 transition-all backdrop-blur-md">Explore Topics</button>
+</div>
+</div>
+<div class="md:col-span-5 hidden md:block">
+<div class="p-8 glass-panel rounded-xl shadow-2xl">
+<div class="space-y-6">
+<div class="flex items-start gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-discovery-teal/20 flex items-center justify-center text-discovery-teal group-hover:bg-discovery-teal group-hover:text-deep-space transition-colors border border-white/10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] text-on-tertiary">Astronomy</h4>
+<p class="text-meta-sm text-on-surface-variant">Unveiling cosmological patterns from massive sky surveys.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-discovery-teal/20 flex items-center justify-center text-discovery-teal group-hover:bg-discovery-teal group-hover:text-deep-space transition-colors border border-white/10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dna</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] text-on-tertiary">Biology</h4>
+<p class="text-meta-sm text-on-surface-variant">Decoding genomic sequences into actionable medical knowledge.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-discovery-teal/20 flex items-center justify-center text-discovery-teal group-hover:bg-discovery-teal group-hover:text-deep-space transition-colors border border-white/10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">tsunami</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] text-on-tertiary">Climate Science</h4>
+<p class="text-meta-sm text-on-surface-variant">Simulating Earth systems to predict and mitigate risks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Questions & Topics Section -->
+<section class="py-section-gap-lg relative">
+<!-- Overlay to ensure readability on the complex background -->
+<div class="absolute inset-0 bg-black/50 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<!-- Section Heading -->
+<div class="mb-section-gap-sm border-l-4 border-discovery-teal pl-stack-md glass-panel p-6 rounded-r-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Intellectual Scope</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mt-stack-xs">Mapping the frontier of interpretability-driven research and scientific methodology.</p>
+</div>
+<!-- Bento Grid for Key Questions -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg mb-section-gap-lg">
+<!-- Card 1 -->
+<div class="p-8 glass-card rounded-xl transition-all group flex flex-col justify-between min-h-[320px] hover:bg-white/5">
+<div>
+<div class="w-12 h-12 rounded-xl bg-discovery-teal/10 flex items-center justify-center mb-6 border border-discovery-teal/20">
+<span class="material-symbols-outlined text-discovery-teal">settings_input_component</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Adapting Modalities</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">How can we adapt traditional interpretability methods to unconventional scientific data like protein folds or gravitational waves?</p>
+</div>
+<div class="mt-8 flex items-center text-discovery-teal font-label-caps text-[10px] tracking-[0.2em] group-hover:translate-x-1 transition-transform">
+                        CORE QUESTION 01 — <span class="ml-2">READ MORE</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-8 glass-card rounded-xl transition-all group flex flex-col justify-between min-h-[320px] hover:bg-white/5">
+<div>
+<div class="w-12 h-12 rounded-xl bg-discovery-teal/10 flex items-center justify-center mb-6 border border-discovery-teal/20">
+<span class="material-symbols-outlined text-discovery-teal">lightbulb</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Translating Knowledge</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">What are the rigorous frameworks required to translate neural representations into human-understandable scientific knowledge?</p>
+</div>
+<div class="mt-8 flex items-center text-discovery-teal font-label-caps text-[10px] tracking-[0.2em] group-hover:translate-x-1 transition-transform">
+                        CORE QUESTION 02 — <span class="ml-2">READ MORE</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-8 glass-card rounded-xl transition-all group flex flex-col justify-between min-h-[320px] hover:bg-white/5">
+<div>
+<div class="w-12 h-12 rounded-xl bg-discovery-teal/10 flex items-center justify-center mb-6 border border-discovery-teal/20">
+<span class="material-symbols-outlined text-discovery-teal">explore</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Open Questions</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Where do current methods fail to capture the causal mechanisms underlying natural phenomena, and how do we bridge this gap?</p>
+</div>
+<div class="mt-8 flex items-center text-discovery-teal font-label-caps text-[10px] tracking-[0.2em] group-hover:translate-x-1 transition-transform">
+                        CORE QUESTION 03 — <span class="ml-2">READ MORE</span>
+</div>
+</div>
+</div>
+<!-- Topics Display -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-start pt-12">
+<div class="lg:col-span-4 lg:sticky lg:top-32 glass-panel p-8 rounded-2xl">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Workshop Topics</h3>
+<p class="font-body-md text-on-surface-variant mb-6">We invite submissions covering a wide spectrum of research at the intersection of ML and discovery.</p>
+<div class="w-16 h-1 bg-discovery-teal rounded-full shadow-[0_0_15px_rgba(125,211,252,0.5)]"></div>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<!-- Topic 1 -->
+<div class="flex flex-col md:flex-row gap-8 p-8 rounded-2xl glass-card group hover:bg-white/5">
+<div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-discovery-teal text-deep-space font-label-caps font-bold shadow-lg shadow-discovery-teal/10">01</div>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-discovery-teal transition-colors mb-2">Methods for Discovery</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Novel algorithmic approaches designed specifically for identifying latent mechanisms, invariants, and patterns in physical or biological systems.</p>
+</div>
+</div>
+<!-- Topic 2 -->
+<div class="flex flex-col md:flex-row gap-8 p-8 rounded-2xl glass-card group hover:bg-white/5">
+<div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-discovery-teal text-deep-space font-label-caps font-bold shadow-lg shadow-discovery-teal/10">02</div>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-discovery-teal transition-colors mb-2">Interpretability-driven Discovery</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Case studies where interpretability tools (e.g., attribution, feature visualization, concept probes) led directly to new scientific hypotheses.</p>
+</div>
+</div>
+<!-- Topic 3 -->
+<div class="flex flex-col md:flex-row gap-8 p-8 rounded-2xl glass-card group hover:bg-white/5">
+<div class="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-xl bg-discovery-teal text-deep-space font-label-caps font-bold shadow-lg shadow-discovery-teal/10">03</div>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface group-hover:text-discovery-teal transition-colors mb-2">Perspectives on Novel Knowledge</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Philosophical and epistemological inquiries into what constitutes "discovery" in the age of generative models and automated science.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-space border-t border-white/5 w-full relative z-20">
+<div class="max-w-container-max mx-auto px-gutter py-16">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-2">
+<span class="w-1.5 h-6 bg-discovery-teal rounded-full"></span>
+                    Interp4Discovery
+                </div>
+<p class="font-body-md text-on-surface-variant mt-4 opacity-70">© NeurIPS 2026 Interpretability for Discovery</p>
+</div>
+<div class="grid grid-cols-2 sm:flex sm:flex-row gap-x-12 gap-y-6">
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-discovery-teal transition-all tracking-widest" href="#">NEURIPS 2026</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-discovery-teal transition-all tracking-widest" href="#">OPENREVIEW</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-discovery-teal transition-all tracking-widest" href="#">CONTACT</a>
+<a class="font-label-caps text-[11px] text-on-surface-variant hover:text-discovery-teal transition-all tracking-widest" href="#">CONDUCT</a>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 text-center">
+<p class="text-meta-sm text-on-surface-variant/40">Powering the next generation of scientific insight through interpretability.</p>
+</div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-12');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section > div').forEach(div => {
+        div.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-100');
+    });
+</script>
+</body></html>
