@@ -27,12 +27,13 @@
       <aside class="content-sidebar">
         <div class="side-card glass">
           <h2>Key dates</h2>
-          <div class="side-date"><span>Submission deadline</span><strong>Aug 29, 2026</strong><small>23:59 AoE</small></div>
+          <div class="side-date"><span>Submission deadline</span><strong>Aug 29, 2026</strong><small>11:59 PM AOE</small></div>
           <div class="side-date"><span>Author notification</span><strong>Sept 29, 2026</strong></div>
           <div class="side-date"><span>Workshop</span><strong>Dec 12 or 13, 2026</strong><small>Final date to be confirmed · Atlanta, Georgia</small></div>
           <a class="button button-primary" href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/Interp4Discovery#tab-your-consoles" target="_blank" rel="noopener noreferrer">OpenReview portal ↗</a>
         </div>
-        <div class="side-card glass"><h3>At a glance</h3><p>4 pages of main text<br>Double blind<br>Non-archival<br>Private on OpenReview</p></div>
+        <div class="side-card glass"><h3>At a glance</h3><p>5 pages of main text<br>+1 page for camera-ready<br>Double blind<br>Non-archival<br>Private on OpenReview</p></div>
+        <div class="side-card glass account-card"><h3>OpenReview account</h3><p>Without an institutional email, account approval can take <strong>up to two weeks</strong>. Please register early.</p></div>
         <div class="side-card glass">
           <h3>Formatting template</h3>
           <p>Download the official NeurIPS 2026 formatting instructions and LaTeX files.</p>
@@ -43,31 +44,65 @@
       <div>
         <article class="content-panel glass">
           <h2>Submission guidelines</h2>
-          <p>Submissions must present original, unpublished work that has not appeared at NeurIPS or another archival machine-learning venue. Submissions are managed through OpenReview and remain private during review.</p>
+          <p>All submissions must be made through the <a class="accent" href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/Interp4Discovery#tab-your-consoles" target="_blank" rel="noopener noreferrer"><strong>OpenReview submission portal ↗</strong></a> and remain private during review. We welcome methodological, empirical, theoretical, and position work on using interpretability to uncover new knowledge.</p>
           <div class="format-summary format-summary-single">
-            <div class="format-card"><span>Paper submissions</span><strong>4 pages</strong><p>Main text only. References and appendices do not count toward the limit, but the main text must be self-contained.</p></div>
+            <div class="format-card"><span>Paper submissions</span><strong>5 pages</strong><p>Main text only. References and appendices do not count toward the limit, but the main text must be self-contained.</p></div>
           </div>
+          <p><strong class="accent">Failure cases and negative results are welcome.</strong> We encourage careful studies of unsuccessful methods, misleading interpretations, failed validation, and practical limitations that help establish when interpretability can—and cannot—support reliable discovery.</p>
           <h3>Formatting</h3>
           <ul>
             <li>Write the submission in English and upload it as a single PDF.</li>
             <li>Use the NeurIPS 2026 workshop LaTeX template.</li>
-            <li>References and appendices are excluded from the four-page main-text limit.</li>
+            <li>References and appendices are excluded from the five-page main-text limit.</li>
             <li>The main text must be self-contained; reviewers are not required to read appendices.</li>
           </ul>
-          <h3>Submissions and presentation</h3>
+          <div class="submission-notice">
+            <span>Plan ahead</span>
+            <p>If you do not have an institutional email, OpenReview account approval can take <strong>up to two weeks</strong>. Please create your account well before the submission deadline.</p>
+          </div>
+          <h3>Presentation and camera-ready</h3>
           <ul>
-            <li><strong>Research and position papers</strong> may be methodological, empirical, theoretical, or perspective-driven.</li>
             <li>Accepted papers will be presented as posters, with a subset selected for oral or spotlight talks.</li>
+            <li>Accepted papers may use <strong>one additional main-text page</strong> in the camera-ready version—up to six main-text pages—to integrate reviewer feedback.</li>
+            <li>Authors are encouraged, but not required, to attend the workshop in person.</li>
+          </ul>
+        </article>
+
+        <article class="content-panel glass">
+          <h2>Eligibility and prior work</h2>
+          <ul>
+            <li>Work previously submitted to or accepted at a <strong>non-archival venue</strong>, including workshops, is welcome.</li>
+            <li>We <strong>do not accept</strong> work that has already been accepted at an <strong>archival venue</strong>, with the exception of NeurIPS 2026 papers submitted through the fast-track process below.</li>
+            <li>Submissions undergoing peer review at another venue, including ICLR or NeurIPS, at the paper submission deadline are welcome.</li>
+          </ul>
+          <h3>NeurIPS 2026 fast track</h3>
+          <p>We welcome papers that have already been accepted to NeurIPS 2026. Authors may request fast-track consideration and will be asked to provide evidence of the prior reviews and acceptance. Fast-track submissions remain subject to additional review, including workshop theme fit, after the regular reviewing process is complete.</p>
+        </article>
+
+        <article class="content-panel glass">
+          <h2>Anonymity and reproducibility</h2>
+          <h3>Double-blind review</h3>
+          <p>The reviewing process is double-blind. Authors are responsible for ensuring that the manuscript and supplementary materials contain no identifying details.</p>
+          <ul>
+            <li>Remove author names, affiliations, acknowledgments, and other identifying details; cite prior work in the third person.</li>
+            <li>Before submission, search the manuscript for the names, GitHub usernames, and Hugging Face usernames of all core contributors.</li>
+          </ul>
+          <h3>Code, data, models, and demos</h3>
+          <p>Authors are strongly encouraged to open source relevant code, models, prompts, data, and interactive demos. Reviewers will be specifically asked to consider reproducibility and the availability of code and data.</p>
+          <ul>
+            <li>For GitHub repositories, we recommend <a class="accent" href="https://anonymous.4open.science/" target="_blank" rel="noopener noreferrer">anonymous.4open.science ↗</a>.</li>
+            <li>For larger files such as model weights and datasets, we recommend using an anonymous Hugging Face account.</li>
+            <li>For interactive demos, we recommend an anonymous website or Streamlit app.</li>
           </ul>
         </article>
 
         <article class="content-panel glass">
           <h2>Review and publication policies</h2>
           <div class="policy-grid">
-            <section class="policy-card"><h3>Double-blind review</h3><p>Remove author names, affiliations, and acknowledgments. Cite prior work in the third person.</p></section>
-            <section class="policy-card"><h3>Non-archival</h3><p>Work under review elsewhere is welcome, and accepted work may be published at another venue afterward.</p></section>
+            <section class="policy-card"><h3>Double-blind review</h3><p>Submissions must be fully anonymized. Authors are responsible for removing all identifying details.</p></section>
+            <section class="policy-card"><h3>Non-archival</h3><p>Prior non-archival work and work under review elsewhere are welcome. Workshop acceptance does not prevent later archival publication.</p></section>
             <section class="policy-card"><h3>Responsible-use statement</h3><p>Every submission must include a short statement covering potential societal impacts and suggested mitigations. A missing statement is grounds for desk rejection.</p></section>
-            <section class="policy-card"><h3>Original work</h3><p>Work already published at NeurIPS or another archival machine-learning venue should not be submitted.</p></section>
+            <section class="policy-card"><h3>Camera-ready revision</h3><p>Accepted papers receive one additional main-text page, for a maximum of six pages, to incorporate reviewer feedback.</p></section>
           </div>
           <h3>Contact</h3>
           <p>Questions may be sent to <a class="accent" href="mailto:interp4discovery@gmail.com">interp4discovery@gmail.com</a>.</p>
