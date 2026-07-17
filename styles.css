@@ -428,6 +428,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--primary); outl
 .topic-card h3 { margin-top: 0; }
 
 .format-summary { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.format-summary-single { grid-template-columns: 1fr; }
 .format-card { padding: 24px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); border-radius: 15px; }
 .format-card span { color: var(--primary); font: 600 12px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .format-card strong { display: block; margin: 12px 0 4px; font: 700 31px var(--display); }
