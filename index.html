@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("interp-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
   <link rel="stylesheet" href="styles.css" />
   <script src="site.js" defer></script>
 </head>
@@ -159,8 +160,7 @@
     <section class="section" id="organizers">
       <div class="container">
         <div class="section-heading">
-          <div><p class="section-kicker">Organizing committee</p><h2>Organizers</h2></div>
-          <p>Researchers and practitioners working across interpretability, AI for science, robustness, and human-centered AI.</p>
+          <div><h2>Organizers</h2></div>
         </div>
         <div class="organizer-grid">
           <article class="organizer-card">
@@ -169,7 +169,7 @@
           </article>
           <article class="organizer-card">
             <figure><img src="https://belinkov.com/assets/img/prof_pic.jpg" alt="Portrait of Yonatan Belinkov" /></figure>
-            <h3><a href="https://belinkov.com">Yonatan Belinkov</a></h3><p>Technion · Harvard University</p>
+            <h3><a href="https://belinkov.com">Yonatan Belinkov</a></h3><p>Technion</p>
           </article>
           <article class="organizer-card">
             <figure><img src="https://ekdeepslubana.github.io/images/ekdeep.jpeg" alt="Portrait of Ekdeep Singh Lubana" /></figure>
@@ -197,7 +197,8 @@
           <div><p class="section-kicker">With support from</p><h2>Sponsorship</h2><p class="sponsor-copy">We gratefully acknowledge the support of our sponsor.</p></div>
         </div>
         <a class="sponsor-card" href="https://www.goodfire.ai/" target="_blank" rel="noopener noreferrer" aria-label="Visit Goodfire AI">
-          <img src="https://cdn.prod.website-files.com/67b4608695ee3b31a669d3a9/67b8517988d0bb6505289e1f_logo%20mark.svg" alt="Goodfire logo" />
+          <img class="sponsor-logo sponsor-logo-night" src="https://cdn.prod.website-files.com/67b4608695ee3b31a669d3a9/67b8517988d0bb6505289e1f_logo%20mark.svg" alt="Goodfire logo" />
+          <img class="sponsor-logo sponsor-logo-light" src="goodfire-logo-color.svg" alt="" aria-hidden="true" />
           <strong>Goodfire</strong>
         </a>
       </div>

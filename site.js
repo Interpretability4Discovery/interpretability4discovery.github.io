@@ -1,6 +1,32 @@
 (function () {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const navShell = document.querySelector('.nav-shell');
+  if (navShell) {
+    const themeToggle = document.createElement('button');
+    themeToggle.type = 'button';
+    themeToggle.className = 'theme-toggle';
+
+    function updateThemeToggle() {
+      const isLight = document.documentElement.dataset.theme === 'light';
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to night theme' : 'Switch to light theme');
+      themeToggle.title = isLight ? 'Night theme' : 'Light theme';
+      themeToggle.innerHTML = isLight
+        ? '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>'
+        : '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>';
+    }
+
+    themeToggle.addEventListener('click', function () {
+      const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = nextTheme;
+      try { localStorage.setItem('interp-theme', nextTheme); } catch (error) { /* Theme still works for this page. */ }
+      updateThemeToggle();
+    });
+
+    updateThemeToggle();
+    navShell.insertBefore(themeToggle, navShell.querySelector('.nav-shell > .button'));
+  }
+
   const revealItems = document.querySelectorAll([
     '.section-heading',
     '.frontier-title',
@@ -47,9 +73,10 @@
     if (!target) return;
 
     event.preventDefault();
-    target.scrollIntoView({
-      behavior: reducedMotion ? 'auto' : 'smooth',
-      block: 'start'
+    const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - headerOffset - 16,
+      behavior: reducedMotion ? 'auto' : 'smooth'
     });
     history.pushState(null, '', hash);
 
