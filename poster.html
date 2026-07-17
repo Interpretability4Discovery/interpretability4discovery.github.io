@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A3 poster for the NeurIPS 2026 Workshop on Interpretability for Discovery." />
+  <title>Interpretability for Discovery — Workshop Poster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --poster-width: 1200;
+      --poster-height: 1697;
+      --ink: #102235;
+      --muted: #536579;
+      --quiet: #718297;
+      --paper: #f4f7fb;
+      --surface: rgba(255, 255, 255, 0.88);
+      --blue: #126b91;
+      --blue-soft: #dcecf3;
+      --violet: #76549c;
+      --line: rgba(22, 49, 72, 0.14);
+      --display: "Hanken Grotesk", sans-serif;
+      --body: "Inter", sans-serif;
+      --mono: "JetBrains Mono", monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { margin: 0; min-width: 320px; }
+
+    body {
+      color: var(--ink);
+      background: #dfe6ed;
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, p, figure { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--display); }
+    img { max-width: 100%; }
+
+    .poster-stage {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding-top: 20px;
+      overflow: hidden;
+    }
+
+    .poster {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      width: 1200px;
+      height: 1697px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 42%, rgba(18, 107, 145, 0.08), transparent 360px),
+        radial-gradient(circle at 94% 72%, rgba(118, 84, 156, 0.06), transparent 380px),
+        var(--paper);
+      box-shadow: 0 30px 90px rgba(26, 45, 62, 0.2);
+      transform: translateX(-50%) scale(var(--poster-scale, 1));
+      transform-origin: top center;
+    }
+
+    .poster-hero {
+      min-height: 465px;
+      display: grid;
+      place-items: center;
+      padding: 52px 66px 46px;
+      color: #f8fafc;
+      text-align: center;
+      background:
+        linear-gradient(90deg, rgba(7, 11, 20, 0.76), rgba(7, 11, 20, 0.55), rgba(7, 11, 20, 0.35)),
+        linear-gradient(180deg, rgba(7, 11, 20, 0.05), rgba(7, 11, 20, 0.44)),
+        url("hero-bg.png") center / cover no-repeat;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.3);
+    }
+
+    .hero-inner { width: 100%; }
+
+    .eyebrow {
+      width: fit-content;
+      margin: 0 auto 18px;
+      padding: 8px 14px;
+      color: #b9e7fb;
+      background: rgba(125, 211, 252, 0.12);
+      border: 1px solid rgba(125, 211, 252, 0.3);
+      border-radius: 999px;
+      font: 700 13px var(--mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 76px;
+      font-weight: 800;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+      white-space: nowrap;
+    }
+
+    .accent { color: #7dd3fc; }
+
+    .hero-lead {
+      max-width: 900px;
+      margin: 0 auto 27px;
+      color: #dce7f0;
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) 118px;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .hero-fact {
+      min-height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 11px 15px;
+      background: rgba(8, 17, 30, 0.56);
+      border: 1px solid rgba(125, 211, 252, 0.22);
+      border-radius: 17px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-fact span {
+      margin-bottom: 4px;
+      color: #8dcce8;
+      font: 700 11px var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-fact strong { font: 700 18px var(--display); }
+
+    .header-qr {
+      min-height: 118px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      background: transparent;
+    }
+
+    .header-qr span {
+      color: #b9e7fb;
+      font: 700 10px var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .header-qr img { width: 96px; height: 96px; display: block; }
+
+    .poster-body { padding: 42px 56px 30px; }
+
+    .poster-section + .poster-section { margin-top: 34px; }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: 31px;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .section-heading span {
+      color: var(--blue);
+      font: 700 11px var(--mono);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .topic {
+      min-height: 215px;
+      padding: 20px 21px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(37, 66, 87, 0.055);
+    }
+
+    .topic-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 50%;
+      font: 700 12px var(--mono);
+    }
+
+    .topic:nth-child(2) .topic-number { background: var(--violet); }
+    .topic:nth-child(3) .topic-number { color: var(--ink); background: #9bc9dc; }
+
+    .topic h3 {
+      margin-bottom: 7px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      line-height: 1.13;
+    }
+
+    .topic p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px 18px;
+    }
+
+    .person {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      grid-template-rows: 1fr 1fr;
+      column-gap: 14px;
+      align-items: center;
+    }
+
+    .person figure {
+      position: relative;
+      grid-row: 1 / 3;
+      margin: 0;
+      overflow: hidden;
+      background: #dce6ec;
+      border: 1px solid var(--line);
+    }
+
+    .speaker {
+      min-height: 146px;
+      padding: 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .speaker figure {
+      width: 112px;
+      height: 126px;
+      border-radius: 13px;
+    }
+
+    .person img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 24%;
+    }
+
+    .speaker img.been-photo { object-position: 36% 24%; }
+
+    .person h3 {
+      align-self: end;
+      margin-bottom: 4px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .person p {
+      align-self: start;
+      margin-bottom: 0;
+      color: var(--blue);
+      font: 600 11px/1.35 var(--mono);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    .organizers {
+      padding: 28px 25px;
+      background: rgba(221, 235, 243, 0.63);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+    }
+
+    .organizers .people-grid {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .organizer {
+      min-height: 90px;
+      display: block;
+      text-align: center;
+    }
+
+    .organizer figure {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 9px;
+      border-radius: 50%;
+    }
+
+    .organizer h3 { font-size: 16px; }
+    .organizer p { font-size: 10px; }
+
+    .poster-footer {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 25px;
+      align-items: center;
+      padding: 12px 18px;
+      color: #f8fafc;
+      background: var(--ink);
+      border-radius: 22px;
+    }
+
+    .footer-label {
+      display: block;
+      margin-bottom: 5px;
+      color: #8ed2ef;
+      font: 700 11px var(--mono);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .contact-email {
+      display: block;
+      color: #ffffff;
+      font: 700 23px var(--display);
+      letter-spacing: -0.015em;
+    }
+
+    .poster-url {
+      padding: 12px 18px;
+      color: #dff4fc;
+      background: rgba(125, 211, 252, 0.12);
+      border: 1px solid rgba(125, 211, 252, 0.28);
+      border-radius: 14px;
+      font: 700 13px var(--mono);
+      letter-spacing: 0.035em;
+    }
+
+    .website-block {
+      display: block;
+    }
+
+    @media print {
+      @page { size: A3 portrait; margin: 0; }
+
+      html, body { width: 297mm; height: 420mm; background: white; }
+      .poster-stage { width: 297mm; height: 420mm !important; min-height: 0; padding: 0; overflow: visible; }
+      .poster {
+        position: static;
+        width: 297mm;
+        height: 420mm;
+        box-shadow: none;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster-stage">
+    <article class="poster" aria-label="Interpretability for Discovery workshop poster">
+      <header class="poster-hero">
+        <div class="hero-inner">
+          <p class="eyebrow">NeurIPS 2026 Workshop</p>
+          <h1>Interpretability for <span class="accent">Discovery</span></h1>
+          <p class="hero-lead">What do AI models know that we don&rsquo;t? We explore how model interpretability can turn learned representations into novel, testable knowledge.</p>
+          <div class="hero-facts">
+            <div class="hero-fact"><span>Tentative date</span><strong>December 12 or 13, 2026</strong></div>
+            <div class="hero-fact"><span>Location</span><strong>Atlanta, Georgia, USA</strong></div>
+            <div class="hero-fact"><span>Submission deadline</span><strong>August 29, 2026 · AoE</strong></div>
+            <div class="header-qr"><span>Workshop website</span><img src="workshop.png" alt="QR code linking to the workshop website" /></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="poster-body">
+        <section class="poster-section">
+          <div class="section-heading"><h2>Workshop Topics</h2><span>Interpretability as a tool for discovery</span></div>
+          <div class="topics">
+            <article class="topic"><span class="topic-number">01</span><h3>Methods and models for knowledge discovery</h3><p>Interpretability methods, evaluation frameworks, and model designs that support discovery across unfamiliar architectures and modalities.</p></article>
+            <article class="topic"><span class="topic-number">02</span><h3>Interpretability-driven discovery</h3><p>Empirical case studies where examining model internals surfaces non-obvious, verifiable knowledge in science and expert domains.</p></article>
+            <article class="topic"><span class="topic-number">03</span><h3>Perspectives on novel knowledge</h3><p>Position papers and theory on scope, limitations, epistemology, validation, and open problems in interpretability for discovery.</p></article>
+          </div>
+        </section>
+
+        <section class="poster-section">
+          <div class="section-heading"><h2>Invited Speakers</h2></div>
+          <div class="people-grid">
+            <article class="person speaker"><figure><img src="gasper.png" alt="Portrait of Gašper Beguš" /></figure><h3>Gašper Beguš</h3><p>UC Berkeley</p></article>
+            <article class="person speaker"><figure><img src="ArielPic.avif" alt="Portrait of Ariel Goldstein" /></figure><h3>Ariel Goldstein</h3><p>University of Cambridge</p></article>
+            <article class="person speaker"><figure><img class="been-photo" src="https://beenkim.github.io/images/Been_Kim.png" alt="Portrait of Been Kim" /></figure><h3>Been Kim</h3><p>Google DeepMind</p></article>
+            <article class="person speaker"><figure><img src="DianboLiu.jpeg" alt="Portrait of Dianbo Liu" /></figure><h3>Dianbo Liu</h3><p>National University of Singapore</p></article>
+            <article class="person speaker"><figure><img src="nick.jpeg" alt="Portrait of Nicholas Wang" /></figure><h3>Nicholas Wang</h3><p>Goodfire</p></article>
+            <article class="person speaker"><figure><img src="john.jpg" alt="Portrait of John F. Wu" /></figure><h3>John F. Wu</h3><p>Johns Hopkins University</p></article>
+          </div>
+        </section>
+
+        <section class="poster-section organizers">
+          <div class="section-heading"><h2>Organizers</h2></div>
+          <div class="people-grid">
+            <article class="person organizer"><figure><img src="xiaoyan_bai.jpg" alt="Portrait of Xiaoyan Bai" /></figure><h3>Xiaoyan Bai</h3><p>University of Chicago</p></article>
+            <article class="person organizer"><figure><img src="https://belinkov.com/assets/img/prof_pic.jpg" alt="Portrait of Yonatan Belinkov" /></figure><h3>Yonatan Belinkov</h3><p>Technion</p></article>
+            <article class="person organizer"><figure><img src="https://ekdeepslubana.github.io/images/ekdeep.jpeg" alt="Portrait of Ekdeep Singh Lubana" /></figure><h3>Ekdeep Singh Lubana</h3><p>Goodfire AI</p></article>
+            <article class="person organizer"><figure><img src="https://yaniv.nikankin.com/assets/img/me.jpg" alt="Portrait of Yaniv Nikankin" /></figure><h3>Yaniv Nikankin</h3><p>Technion</p></article>
+            <article class="person organizer"><figure><img src="https://chenhaot.github.io/images/web_circle_small.jpg" alt="Portrait of Chenhao Tan" /></figure><h3>Chenhao Tan</h3><p>University of Chicago</p></article>
+            <article class="person organizer"><figure><img src="IMG_2611.jpg" alt="Portrait of Amirtha Varshini A S" /></figure><h3>Amirtha Varshini A S</h3><p>Montai Therapeutics</p></article>
+          </div>
+        </section>
+
+        <footer class="poster-footer">
+          <div><span class="footer-label">Contact the organizers</span><strong class="contact-email">interp4discovery@gmail.com</strong></div>
+          <div class="website-block">
+            <div><span class="footer-label">Workshop website</span><div class="poster-url">interpretability4science.github.io</div></div>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const stage = document.querySelector('.poster-stage');
+      const poster = document.querySelector('.poster');
+
+      function fitPoster() {
+        if (window.matchMedia('print').matches) return;
+        const scale = Math.min((window.innerWidth - 32) / 1200, 1);
+        poster.style.setProperty('--poster-scale', scale);
+        stage.style.height = Math.ceil(1697 * scale + 40) + 'px';
+      }
+
+      fitPoster();
+      window.addEventListener('resize', fitPoster);
+    }());
+  </script>
+</body>
+</html>
