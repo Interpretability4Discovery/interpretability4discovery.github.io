@@ -428,6 +428,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--primary); outl
 .content-panel ul { padding-left: 20px; }
 .content-panel li + li { margin-top: 10px; }
 .submission-notice { margin-top: 24px; padding: 20px 22px; background: var(--primary-soft); border: 1px solid var(--line-blue); border-radius: 15px; }
+.requirements-notice { margin: 0 0 24px; }
 .submission-notice span { display: block; margin-bottom: 7px; color: var(--primary); font: 700 12px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .submission-notice p { margin: 0; }
 .account-card strong { color: var(--primary); }
