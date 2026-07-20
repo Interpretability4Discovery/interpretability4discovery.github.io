@@ -317,7 +317,28 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--primary); outl
 .date-card-featured { background: #0d4f6d; border-color: rgba(125, 211, 252, 0.34); }
 .date-card-featured strong { color: var(--primary); }
 
+.reviewer-callout {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 25px 28px;
+  background: var(--primary-soft);
+  border: 1px solid var(--line-blue);
+  border-radius: 20px;
+}
+.reviewer-callout span { display: block; margin-bottom: 7px; color: var(--primary); font: 700 12px var(--mono); letter-spacing: 0.09em; text-transform: uppercase; }
+.reviewer-callout h3 { margin-bottom: 5px; font-size: clamp(23px, 3vw, 31px); letter-spacing: -0.03em; }
+.reviewer-callout h3 small { color: var(--muted); font-size: 0.62em; font-weight: 600; white-space: nowrap; }
+.reviewer-callout p { margin: 0; color: var(--muted); font-size: 16px; }
+.reviewer-callout .button { white-space: nowrap; }
+
 .speaker-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 26px; }
+.speaker-announcement { min-height: 250px; display: grid; place-items: center; padding: 36px; text-align: center; border-radius: 24px; }
+.speaker-announcement span { display: block; margin-bottom: 12px; color: var(--primary); font: 700 12px var(--mono); letter-spacing: 0.09em; text-transform: uppercase; }
+.speaker-announcement h3 { margin-bottom: 8px; font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.035em; }
+.speaker-announcement p { margin: 0; color: var(--muted); font-size: 17px; }
 .speaker-card figure { position: relative; aspect-ratio: 4 / 5; margin-bottom: 16px; overflow: hidden; background: var(--surface-high); border: 1px solid var(--line); border-radius: 15px; }
 .speaker-card img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 24%; transition: transform 700ms var(--ease), opacity 400ms ease; }
 .speaker-card img.been-photo { object-position: 36% 24%; }
@@ -544,6 +565,9 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--primary); outl
   .schedule-row > div { grid-column: 1; }
   .schedule-tag { grid-column: 2; grid-row: 1; }
   .section-action { justify-content: flex-start; }
+  .reviewer-callout { grid-template-columns: 1fr; }
+  .reviewer-callout h3 small { display: block; margin-top: 4px; white-space: normal; }
+  .reviewer-callout .button { width: 100%; }
   .topic-card { grid-template-columns: 45px minmax(0, 1fr); }
 }
 

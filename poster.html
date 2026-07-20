@@ -278,6 +278,29 @@
 
     .speaker img.been-photo { object-position: 36% 24%; }
 
+    .poster-speaker-announcement {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    .poster-speaker-announcement span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--blue);
+      font: 700 12px var(--mono);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .poster-speaker-announcement h3 { margin-bottom: 7px; font-size: 34px; letter-spacing: -0.035em; }
+    .poster-speaker-announcement p { margin: 0; color: var(--muted); font-size: 15px; }
+
     .person h3 {
       align-self: end;
       margin-bottom: 4px;
@@ -409,6 +432,7 @@
 
         <section class="poster-section">
           <div class="section-heading"><h2>Invited Speakers</h2></div>
+          <!-- Speaker profiles preserved for publication later.
           <div class="people-grid">
             <article class="person speaker"><figure><img src="gasper.png" alt="Portrait of Gašper Beguš" /></figure><h3>Gašper Beguš</h3><p>UC Berkeley</p></article>
             <article class="person speaker"><figure><img src="ArielPic.avif" alt="Portrait of Ariel Goldstein" /></figure><h3>Ariel Goldstein</h3><p>University of Cambridge</p></article>
@@ -417,6 +441,8 @@
             <article class="person speaker"><figure><img src="nick.jpeg" alt="Portrait of Nicholas Wang" /></figure><h3>Nicholas Wang</h3><p>Goodfire</p></article>
             <article class="person speaker"><figure><img src="john.jpg" alt="Portrait of John F. Wu" /></figure><h3>John F. Wu</h3><p>Johns Hopkins University</p></article>
           </div>
+          -->
+          <div class="poster-speaker-announcement"><div><span>Speaker lineup</span><h3>To be announced soon</h3><p>Invited speakers will be published once all details are confirmed.</p></div></div>
         </section>
 
         <section class="poster-section organizers">

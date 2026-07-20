@@ -32,6 +32,7 @@
     '.frontier-title',
     '.frontier-copy',
     '.date-card',
+    '.reviewer-callout',
     '.speaker-card',
     '.organizer-card',
     '.sponsor-card',
