@@ -278,6 +278,30 @@
 
     .speaker img.been-photo { object-position: 36% 24%; }
 
+    .speaker-more {
+      min-height: 146px;
+      grid-column: span 2;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(227, 238, 246, 0.86), rgba(246, 250, 252, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .speaker-more span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--blue);
+      font: 700 11px var(--mono);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .speaker-more h3 { margin-bottom: 5px; font-size: 23px; letter-spacing: -0.035em; line-height: 1.05; }
+    .speaker-more p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.35; }
+
     .poster-speaker-announcement {
       min-height: 300px;
       display: grid;
@@ -432,17 +456,20 @@
 
         <section class="poster-section">
           <div class="section-heading"><h2>Invited Speakers</h2></div>
-          <!-- Speaker profiles preserved for publication later.
+          <!-- Additional speaker profiles preserved for publication later.
           <div class="people-grid">
-            <article class="person speaker"><figure><img src="gasper.png" alt="Portrait of Gašper Beguš" /></figure><h3>Gašper Beguš</h3><p>UC Berkeley</p></article>
             <article class="person speaker"><figure><img src="ArielPic.avif" alt="Portrait of Ariel Goldstein" /></figure><h3>Ariel Goldstein</h3><p>University of Cambridge</p></article>
             <article class="person speaker"><figure><img class="been-photo" src="https://beenkim.github.io/images/Been_Kim.png" alt="Portrait of Been Kim" /></figure><h3>Been Kim</h3><p>Google DeepMind</p></article>
             <article class="person speaker"><figure><img src="DianboLiu.jpeg" alt="Portrait of Dianbo Liu" /></figure><h3>Dianbo Liu</h3><p>National University of Singapore</p></article>
-            <article class="person speaker"><figure><img src="nick.jpeg" alt="Portrait of Nicholas Wang" /></figure><h3>Nicholas Wang</h3><p>Goodfire</p></article>
-            <article class="person speaker"><figure><img src="john.jpg" alt="Portrait of John F. Wu" /></figure><h3>John F. Wu</h3><p>Johns Hopkins University</p></article>
           </div>
           -->
-          <div class="poster-speaker-announcement"><div><span>Speaker lineup</span><h3>To be announced soon</h3><p>Invited speakers will be published once all details are confirmed.</p></div></div>
+          <div class="people-grid">
+            <article class="person speaker"><figure><img src="gasper.png" alt="Portrait of Gašper Beguš" /></figure><h3>Gašper Beguš</h3><p>UC Berkeley</p></article>
+            <article class="person speaker"><figure><img src="katrin_franke.jpg" alt="Portrait of Katrin Franke" /></figure><h3>Katrin Franke</h3><p>Stanford University</p></article>
+            <article class="person speaker"><figure><img src="nick.jpeg" alt="Portrait of Nicholas Wang" /></figure><h3>Nicholas Wang</h3><p>Goodfire</p></article>
+            <article class="person speaker"><figure><img src="john.jpg" alt="Portrait of John F. Wu" /></figure><h3>John F. Wu</h3><p>Johns Hopkins University</p></article>
+            <article class="speaker-more"><div><span>Speaker lineup</span><h3>More speakers coming soon</h3><p>Additional speakers will be announced.</p></div></article>
+          </div>
         </section>
 
         <section class="poster-section organizers">
